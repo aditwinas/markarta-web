@@ -1,0 +1,188 @@
+- generic [active] [ref=e1]:
+  - img:
+    - generic "coin-stack-decrease"
+    - generic "upload-files"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Upgrade Bisnis Anda, semakin mudah, kompetitif dan menguntungkan dengan fitur premium
+            - generic: Olsera Premium
+    - generic:
+      - generic:
+        - generic:
+          - generic: POS
+    - generic:
+      - generic: "%"
+    - generic:
+      - generic: Rp
+    - generic:
+      - generic:
+        - generic:
+          - generic: Rp
+    - generic "repairing"
+  - generic [ref=e168]:
+    - banner [ref=e169]:
+      - navigation [ref=e170]:
+        - button [ref=e171] [cursor=pointer]:
+          - img [ref=e172]
+        - generic [ref=e176]: What's New
+        - list [ref=e178]:
+          - listitem [ref=e179]:
+            - button " Pencari Pintar" [ref=e181] [cursor=pointer]:
+              - generic [ref=e182]:
+                - generic [ref=e183]: 
+                - text: Pencari Pintar
+          - listitem [ref=e184]:
+            - link [ref=e185] [cursor=pointer]:
+              - /url: /whatsnew
+              - button [ref=e186]:
+                - img [ref=e188]
+          - listitem [ref=e190]:
+            - link [ref=e191] [cursor=pointer]:
+              - /url: https://sebelascoffeeveteran.myolsera.com
+              - button [ref=e192]:
+                - img [ref=e194]
+          - listitem [ref=e196]:
+            - generic [ref=e197]:
+              - button "0" [ref=e198] [cursor=pointer]:
+                - generic [ref=e199]:
+                  - button [ref=e200]:
+                    - img [ref=e202]
+                  - superscript [ref=e204]: "0"
+              - text:  
+    - complementary [ref=e205]:
+      - generic [ref=e206]:
+        - button "operationsmanagersbelascoffee Pemilik " [ref=e209] [cursor=pointer]:
+          - img [ref=e212]
+          - generic [ref=e213]:
+            - generic [ref=e214]:
+              - heading "operationsmanagersbelascoffee" [level=5] [ref=e215]
+              - img [ref=e216]
+            - text: Pemilik
+          - button "" [ref=e219]:
+            - generic [ref=e220]: 
+        - menubar [ref=e222]:
+          - generic [ref=e223]:
+            - menuitem "Kembali ke menu lama" [ref=e224] [cursor=pointer]:
+              - img [ref=e225]
+              - generic [ref=e227]: Kembali ke menu lama
+            - link "1 Tahun+ Dasbor" [ref=e229] [cursor=pointer]:
+              - /url: /dashboard
+              - menuitem "1 Tahun+ Dasbor" [ref=e230]:
+                - img [ref=e232]
+                - generic [ref=e234]:
+                  - img [ref=e235]
+                  - text: 1 Tahun+
+                - generic [ref=e236]: Dasbor
+            - link "Insight Beta" [ref=e237] [cursor=pointer]:
+              - /url: /insight
+              - menuitem "Insight Beta" [ref=e238]:
+                - img [ref=e240]
+                - generic [ref=e242]:
+                  - generic [ref=e243]: Insight
+                  - generic [ref=e244]: Beta
+            - menuitem "Produk & Inventori " [ref=e247]:
+              - generic [ref=e248] [cursor=pointer]:
+                - img [ref=e249]
+                - generic [ref=e251]: Produk & Inventori
+                - generic [ref=e252]: 
+            - menuitem "Marketing " [ref=e253]:
+              - generic [ref=e254] [cursor=pointer]:
+                - img [ref=e255]
+                - generic [ref=e257]: Marketing
+                - generic [ref=e258]: 
+            - link "Pelanggan & Supplier" [ref=e259] [cursor=pointer]:
+              - /url: /customersupplier
+              - menuitem "Pelanggan & Supplier" [ref=e260]:
+                - img [ref=e261]
+                - generic [ref=e263]: Pelanggan & Supplier
+            - menuitem "Transaksi & Pembayaran " [ref=e264]:
+              - generic [ref=e265] [cursor=pointer]:
+                - img [ref=e266]
+                - generic [ref=e268]: Transaksi & Pembayaran
+                - generic [ref=e269]: 
+            - menuitem "Laporan dan Pembukuan " [ref=e270]:
+              - generic [ref=e271] [cursor=pointer]:
+                - img [ref=e272]
+                - generic [ref=e274]: Laporan dan Pembukuan
+                - generic [ref=e275]: 
+            - menuitem "Penjualan Online " [ref=e276]:
+              - generic [ref=e277] [cursor=pointer]:
+                - img [ref=e278]
+                - generic [ref=e280]: Penjualan Online
+                - generic [ref=e281]: 
+            - menuitem "Pegawai " [ref=e282]:
+              - generic [ref=e283] [cursor=pointer]:
+                - img [ref=e284]
+                - generic [ref=e286]: Pegawai
+                - generic [ref=e287]: 
+            - link "Olsera Market" [ref=e288] [cursor=pointer]:
+              - /url: /olseramarket
+              - menuitem "Olsera Market" [ref=e289]:
+                - img [ref=e290]
+                - generic [ref=e292]: Olsera Market
+            - menuitem "Kemitraan & Pendanaan " [ref=e293]:
+              - generic [ref=e294] [cursor=pointer]:
+                - img [ref=e295]
+                - generic [ref=e297]: Kemitraan & Pendanaan
+                - generic [ref=e298]: 
+            - link "GoTyme Modal" [ref=e299] [cursor=pointer]:
+              - /url: /gotyme-modal
+              - menuitem "GoTyme Modal" [ref=e300]:
+                - img [ref=e301]
+                - generic [ref=e303]: GoTyme Modal
+            - menuitem "Pengaturan " [ref=e306]:
+              - generic [ref=e307] [cursor=pointer]:
+                - img [ref=e308]
+                - generic [ref=e310]: Pengaturan
+                - generic [ref=e311]: 
+            - link "Pusat Bantuan" [ref=e312] [cursor=pointer]:
+              - /url: /tutorial
+              - menuitem "Pusat Bantuan" [ref=e313]:
+                - img [ref=e314]
+                - generic [ref=e316]: Pusat Bantuan
+        - generic [ref=e320]:
+          - button "Chat yuk" [ref=e322] [cursor=pointer]:
+            - generic [ref=e323]:
+              - img [ref=e324]
+              - text: Chat yuk
+          - button "Whatsapp" [ref=e327] [cursor=pointer]:
+            - generic [ref=e329]:
+              - img [ref=e331]
+              - generic [ref=e333]: Whatsapp
+    - generic [ref=e336]:
+      - generic [ref=e337]:
+        - generic [ref=e340]:
+          - generic [ref=e341] [cursor=pointer]:
+            - generic [ref=e342]: Baru
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - img
+              - generic [ref=e347]: 
+            - generic [ref=e349]: Selengkapnya...
+          - generic [ref=e351]:
+            - generic [ref=e353]: Fitur akan datang
+            - generic [ref=e354]:
+              - link "Selengkapnya" [ref=e356] [cursor=pointer]:
+                - /url: /released-features
+                - button "Selengkapnya" [ref=e357]
+              - generic [ref=e359]: 
+        - generic: 
+        - generic [ref=e360]:
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - img [ref=e363]
+              - generic [ref=e366] [cursor=pointer]: Selengkapnya...
+            - generic [ref=e367]:
+              - generic [ref=e368]: 
+              - generic [ref=e369]: "1"
+          - generic [ref=e371]:
+            - img [ref=e372]
+            - text: Selanjutnya
+        - generic [ref=e373]: Sebelumnya
+      - text:     
+    - text: 
+    - img [ref=e377]
+    - text:      
+    - text:    

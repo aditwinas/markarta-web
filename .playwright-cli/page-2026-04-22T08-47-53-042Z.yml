@@ -1,0 +1,276 @@
+- generic [active] [ref=e1]:
+  - img:
+    - generic "coin-stack-decrease"
+    - generic "upload-files"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Upgrade Bisnis Anda, semakin mudah, kompetitif dan menguntungkan dengan fitur premium
+            - generic: Olsera Premium
+    - generic:
+      - generic:
+        - generic:
+          - generic: POS
+    - generic:
+      - generic: "%"
+    - generic:
+      - generic: Rp
+    - generic:
+      - generic:
+        - generic:
+          - generic: Rp
+    - generic "repairing"
+  - generic [ref=e14]:
+    - banner [ref=e15]:
+      - navigation [ref=e16]:
+        - button [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - link "Daftar Laporan" [ref=e23] [cursor=pointer]:
+              - /url: /reports
+            - text: /
+          - generic [ref=e24]: Laporan Multioutlets
+        - list [ref=e26]:
+          - listitem [ref=e27]:
+            - button " Pencari Pintar" [ref=e29] [cursor=pointer]:
+              - generic [ref=e30]:
+                - generic [ref=e31]: 
+                - text: Pencari Pintar
+          - listitem [ref=e32]:
+            - link [ref=e33] [cursor=pointer]:
+              - /url: /whatsnew
+              - button [ref=e34]:
+                - img [ref=e36]
+          - listitem [ref=e38]:
+            - link [ref=e39] [cursor=pointer]:
+              - /url: https://sebelascoffeeveteran.myolsera.com
+              - button [ref=e40]:
+                - img [ref=e42]
+          - listitem [ref=e44]:
+            - generic [ref=e45]:
+              - button "1" [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]:
+                  - button [ref=e48]:
+                    - img [ref=e50]
+                  - superscript [ref=e52]: "1"
+              - text:  
+          - listitem [ref=e53]:
+            - generic [ref=e55]:
+              - generic [ref=e56]:
+                - textbox "Select" [ref=e57] [cursor=pointer]: Sebelas Coffee Veteran
+                - img [ref=e60]
+                - generic [ref=e62] [cursor=pointer]: 
+              - text: 
+    - complementary [ref=e63]:
+      - generic [ref=e64]:
+        - button "operationsmanagersbelascoffee Pemilik 55 " [ref=e67] [cursor=pointer]:
+          - img [ref=e70]
+          - generic [ref=e71]:
+            - heading "operationsmanagersbelascoffee" [level=5] [ref=e73]
+            - text: Pemilik
+          - progressbar [ref=e75]:
+            - img [ref=e77]
+            - generic [ref=e80]: "55"
+          - button "" [ref=e82]:
+            - generic [ref=e83]: 
+        - menubar [ref=e85]:
+          - generic [ref=e86]:
+            - menuitem "Kembali ke menu lama" [ref=e87] [cursor=pointer]:
+              - img [ref=e88]
+              - generic [ref=e90]: Kembali ke menu lama
+            - link "1 Tahun+ Dasbor" [ref=e92] [cursor=pointer]:
+              - /url: /dashboard
+              - menuitem "1 Tahun+ Dasbor" [ref=e93]:
+                - img [ref=e95]
+                - generic [ref=e97]:
+                  - img [ref=e98]
+                  - text: 1 Tahun+
+                - generic [ref=e99]: Dasbor
+            - link "Insight Beta" [ref=e100] [cursor=pointer]:
+              - /url: /insight
+              - menuitem "Insight Beta" [ref=e101]:
+                - img [ref=e103]
+                - generic [ref=e105]:
+                  - generic [ref=e106]: Insight
+                  - generic [ref=e107]: Beta
+            - menuitem "Produk & Inventori " [ref=e110]:
+              - generic [ref=e111] [cursor=pointer]:
+                - img [ref=e112]
+                - generic [ref=e114]: Produk & Inventori
+                - generic [ref=e115]: 
+            - menuitem "Marketing " [ref=e116]:
+              - generic [ref=e117] [cursor=pointer]:
+                - img [ref=e118]
+                - generic [ref=e120]: Marketing
+                - generic [ref=e121]: 
+            - link "Pelanggan & Supplier" [ref=e122] [cursor=pointer]:
+              - /url: /customersupplier
+              - menuitem "Pelanggan & Supplier" [ref=e123]:
+                - img [ref=e124]
+                - generic [ref=e126]: Pelanggan & Supplier
+            - menuitem "Transaksi & Pembayaran " [ref=e127]:
+              - generic [ref=e128] [cursor=pointer]:
+                - img [ref=e129]
+                - generic [ref=e131]: Transaksi & Pembayaran
+                - generic [ref=e132]: 
+            - menuitem "Laporan dan Pembukuan " [ref=e133]:
+              - generic [ref=e134] [cursor=pointer]:
+                - img [ref=e135]
+                - generic [ref=e137]: Laporan dan Pembukuan
+                - generic [ref=e138]: 
+            - menuitem "Penjualan Online " [ref=e139]:
+              - generic [ref=e140] [cursor=pointer]:
+                - img [ref=e141]
+                - generic [ref=e143]: Penjualan Online
+                - generic [ref=e144]: 
+            - menuitem "Pegawai " [ref=e145]:
+              - generic [ref=e146] [cursor=pointer]:
+                - img [ref=e147]
+                - generic [ref=e149]: Pegawai
+                - generic [ref=e150]: 
+            - link "Olsera Market" [ref=e151] [cursor=pointer]:
+              - /url: /olseramarket
+              - menuitem "Olsera Market" [ref=e152]:
+                - img [ref=e153]
+                - generic [ref=e155]: Olsera Market
+            - menuitem "Kemitraan & Pendanaan " [ref=e156]:
+              - generic [ref=e157] [cursor=pointer]:
+                - img [ref=e158]
+                - generic [ref=e160]: Kemitraan & Pendanaan
+                - generic [ref=e161]: 
+            - link "GoTyme Modal" [ref=e162] [cursor=pointer]:
+              - /url: /gotyme-modal
+              - menuitem "GoTyme Modal" [ref=e163]:
+                - img [ref=e164]
+                - generic [ref=e166]: GoTyme Modal
+            - menuitem "Pengaturan " [ref=e169]:
+              - generic [ref=e170] [cursor=pointer]:
+                - img [ref=e171]
+                - generic [ref=e173]: Pengaturan
+                - generic [ref=e174]: 
+            - link "Pusat Bantuan" [ref=e175] [cursor=pointer]:
+              - /url: /tutorial
+              - menuitem "Pusat Bantuan" [ref=e176]:
+                - img [ref=e177]
+                - generic [ref=e179]: Pusat Bantuan
+        - generic [ref=e181]:
+          - button "Chat yuk" [ref=e183] [cursor=pointer]:
+            - generic [ref=e184]:
+              - img [ref=e185]
+              - text: Chat yuk
+          - button "Whatsapp" [ref=e188] [cursor=pointer]:
+            - generic [ref=e190]:
+              - img [ref=e192]
+              - generic [ref=e194]: Whatsapp
+    - generic [ref=e196]:
+      - tablist [ref=e198]:
+        - listitem [ref=e199]:
+          - link "Laporan Produk" [ref=e200] [cursor=pointer]:
+            - /url: /reports/products
+        - listitem [ref=e201]:
+          - link "Laporan Pembelian" [ref=e202] [cursor=pointer]:
+            - /url: /reports/purchases
+        - listitem [ref=e203]:
+          - link "Laporan Penjualan" [ref=e204] [cursor=pointer]:
+            - /url: /reports/sales
+        - listitem [ref=e205]:
+          - link "Laporan Penjualan Per Shift" [ref=e206] [cursor=pointer]:
+            - /url: /reports/shifts
+        - listitem [ref=e207]:
+          - link "Laporan Pembayaran" [ref=e208] [cursor=pointer]:
+            - /url: /reports/payments
+        - listitem [ref=e209]:
+          - link "Laporan Multi Outlet" [ref=e210] [cursor=pointer]:
+            - /url: /reports/multioutlets
+      - generic [ref=e212]:
+        - generic [ref=e213]:
+          - text:  
+          - generic [ref=e214]:
+            - heading "Daftar Laporan" [level=4] [ref=e217] [cursor=pointer]
+            - generic [ref=e219]:
+              - generic [ref=e222]:
+                - textbox "Ketikan keyword" [ref=e223] [cursor=pointer]
+                - generic [ref=e225] [cursor=pointer]: 
+              - list [ref=e226]:
+                - listitem [ref=e227]:
+                  - generic [ref=e229] [cursor=pointer]: Ringkasan Penjualan
+                - listitem [ref=e230]:
+                  - generic [ref=e232] [cursor=pointer]: Sisa Stok Produk
+                - listitem [ref=e233]:
+                  - generic [ref=e235] [cursor=pointer]: Penjualan Item berdasarkan Tanggal
+                - listitem [ref=e236]:
+                  - generic [ref=e238] [cursor=pointer]: Rincian Penjualan
+                - listitem [ref=e239]:
+                  - generic [ref=e241] [cursor=pointer]: Stok Kedaluwarsa
+                - listitem [ref=e242]:
+                  - generic [ref=e244] [cursor=pointer]: Stok FIFO
+                - listitem [ref=e245]:
+                  - generic [ref=e247] [cursor=pointer]: Penjualan QPon
+        - generic [ref=e248]:
+          - generic [ref=e250]:
+            - heading "Ringkasan Penjualan" [level=4] [ref=e251] [cursor=pointer]
+            - generic [ref=e252]:
+              - generic [ref=e253]:
+                - button " 01 Apr 26 - 30 Apr 26 " [ref=e386] [cursor=pointer]:
+                  - generic [ref=e256]: 
+                  - generic [ref=e257]:
+                    - text: 01 Apr 26 - 30 Apr 26
+                    - generic [ref=e258]: 
+                - img [ref=e389]
+              - button " PDF" [ref=e259] [cursor=pointer]:
+                - generic [ref=e260]: 
+                - text: PDF
+              - button " EXCEL" [ref=e261] [cursor=pointer]:
+                - generic [ref=e262]: 
+                - text: EXCEL
+            - img [ref=e393]
+          - generic [ref=e264]:
+            - generic [ref=e265]:
+              - generic [ref=e266]:
+                - heading "Ringkasan" [level=5] [ref=e267]
+                - generic [ref=e268]:
+                  - table [ref=e270]:
+                    - rowgroup [ref=e275]:
+                      - row "Mata Uang Jumlah Total Laba" [ref=e276]:
+                        - columnheader "Mata Uang" [ref=e277]:
+                          - generic [ref=e278]: Mata Uang
+                        - columnheader "Jumlah" [ref=e279]:
+                          - generic [ref=e280]: Jumlah
+                        - columnheader "Total Laba" [ref=e281]:
+                          - generic [ref=e282]: Total Laba
+                  - generic [ref=e283]:
+                    - table:
+                      - rowgroup
+                    - generic [ref=e396]: No Data
+              - separator [ref=e297]
+              - generic [ref=e298]:
+                - table [ref=e300]:
+                  - rowgroup [ref=e305]:
+                    - row "Toko Jumlah Total Laba" [ref=e306]:
+                      - columnheader "Toko" [ref=e307]:
+                        - generic [ref=e308]: Toko
+                      - columnheader "Jumlah" [ref=e309]:
+                        - generic [ref=e310]: Jumlah
+                      - columnheader "Total Laba" [ref=e311]:
+                        - generic [ref=e312]: Total Laba
+                - generic [ref=e313]:
+                  - table:
+                    - rowgroup
+                  - generic [ref=e398]: No Data
+              - generic [ref=e363]:
+                - generic [ref=e366]:
+                  - textbox "Select" [ref=e367] [cursor=pointer]: 50/page
+                  - generic [ref=e369] [cursor=pointer]: 
+                - button "" [disabled] [ref=e370]:
+                  - generic [ref=e371]: 
+                - list [ref=e372]:
+                  - listitem [ref=e373]: "1"
+                - button "" [disabled] [ref=e374]:
+                  - generic [ref=e375]: 
+            - img [ref=e401]
+        - text: 
+    - text: 
+    - text:      
+    - text:    

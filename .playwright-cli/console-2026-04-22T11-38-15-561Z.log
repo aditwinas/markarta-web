@@ -1,0 +1,4 @@
+[     524ms] [LOG] loadingMessage null @ https://dashboardv2.olsera.co.id/login:106
+[     719ms] [LOG] MIXPANEL PEOPLE REQUEST (QUEUED, PENDING IDENTIFY): @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[     719ms] [LOG] {$set_once: Object, $token: b92e036156852f7b44431de164e9fbeb, $distinct_id: $device:62a52c3f-ec85-4b64-a4e4-1a51172e7225, $device_id: 62a52c3f-ec85-4b64-a4e4-1a51172e7225} @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[    2113ms] [WARNING] Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36 @ https://static.hotjar.com/c/hotjar-5339913.js?sv=7:2

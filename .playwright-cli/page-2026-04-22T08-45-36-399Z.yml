@@ -1,0 +1,50 @@
+- generic [active] [ref=e1]:
+  - img:
+    - generic "coin-stack-decrease"
+    - generic "upload-files"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Upgrade Bisnis Anda, semakin mudah, kompetitif dan menguntungkan dengan fitur premium
+            - generic: Olsera Premium
+    - generic:
+      - generic:
+        - generic:
+          - generic: POS
+    - generic:
+      - generic: "%"
+    - generic:
+      - generic: Rp
+    - generic:
+      - generic:
+        - generic:
+          - generic: Rp
+    - generic "repairing"
+  - generic [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - img [ref=e18]
+        - img [ref=e20]
+      - generic [ref=e21]:
+        - generic [ref=e22]: Olsera Backoffice
+        - generic [ref=e23]:
+          - generic [ref=e26]:
+            - textbox "Email" [ref=e27]: operationdmanagersbelascoffee@gmail.com
+            - img [ref=e45]
+          - generic [ref=e32]:
+            - textbox "Password" [ref=e33]: "@Rumah11makinoke"
+            - img [ref=e47]
+            - img [ref=e50] [cursor=pointer]
+          - button "Masuk" [ref=e39] [cursor=pointer]
+          - alert [ref=e55]:
+            - generic [ref=e56]: 
+            - generic [ref=e57]:
+              - text: Email atau password salah
+              - generic [ref=e58] [cursor=pointer]: 
+        - generic [ref=e40]: Lupa kata sandi
+        - generic [ref=e41]:
+          - button "Daftar" [ref=e42] [cursor=pointer]
+          - button "Hubungi kami" [ref=e43] [cursor=pointer]
+        - generic [ref=e44]: "Build version: dash21.2026/04/21 13:29"
+    - text: 

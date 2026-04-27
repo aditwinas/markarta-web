@@ -1,0 +1,42 @@
+- generic [active] [ref=e1]:
+  - img:
+    - generic "coin-stack-decrease"
+    - generic "upload-files"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Upgrade Bisnis Anda, semakin mudah, kompetitif dan menguntungkan dengan fitur premium
+            - generic: Olsera Premium
+    - generic:
+      - generic:
+        - generic:
+          - generic: POS
+    - generic:
+      - generic: "%"
+    - generic:
+      - generic: Rp
+    - generic:
+      - generic:
+        - generic:
+          - generic: Rp
+    - generic "repairing"
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - img [ref=e16]
+        - img [ref=e18]
+      - generic [ref=e19]:
+        - generic [ref=e20]: Olsera Backoffice
+        - generic [ref=e21]:
+          - generic [ref=e23]:
+            - textbox "Email" [ref=e25]
+            - generic [ref=e43]: email is required
+          - textbox "Password" [ref=e31]
+          - button "Masuk" [disabled] [ref=e37]
+        - generic [ref=e38]: Lupa kata sandi
+        - generic [ref=e39]:
+          - button "Daftar" [ref=e40] [cursor=pointer]
+          - button "Hubungi kami" [ref=e41] [cursor=pointer]
+        - generic [ref=e42]: "Build version: dash21.2026/04/22 17:04"
+    - text: 

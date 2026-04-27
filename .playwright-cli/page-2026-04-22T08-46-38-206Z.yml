@@ -1,0 +1,117 @@
+- generic [ref=e1]:
+  - img:
+    - generic "coin-stack-decrease"
+    - generic "upload-files"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - generic: Upgrade Bisnis Anda, semakin mudah, kompetitif dan menguntungkan dengan fitur premium
+            - generic: Olsera Premium
+    - generic:
+      - generic:
+        - generic:
+          - generic: POS
+    - generic:
+      - generic: "%"
+    - generic:
+      - generic: Rp
+    - generic:
+      - generic:
+        - generic:
+          - generic: Rp
+    - generic "repairing"
+  - generic [ref=e59]:
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63]: Toko Anda (8/8)
+          - generic [ref=e64] [cursor=pointer]: Tagihan Saya
+        - generic [ref=e66]:
+          - generic [ref=e68] [cursor=pointer]:
+            - img "Sebelas Coffee Auriga Jakal" [ref=e71]
+            - generic [ref=e72]:
+              - generic [ref=e73]: Sebelas Coffee Auriga Jakal
+              - text: sebelascoffeeaurigajakal.myolsera.com
+            - generic [ref=e74]:
+              - img [ref=e75]
+              - generic [ref=e76]: 1 Tahun+
+          - generic [ref=e78] [cursor=pointer]:
+            - img "Sebelas Coffee Nologaten" [ref=e81]
+            - generic [ref=e82]:
+              - generic [ref=e83]: Sebelas Coffee Nologaten
+              - text: sebelascoffeenologaten.myolsera.com
+            - generic [ref=e84]:
+              - img [ref=e85]
+              - generic [ref=e86]: 1 Tahun+
+          - generic [ref=e88] [cursor=pointer]:
+            - img "Sebelas Coffee Concat" [ref=e91]
+            - generic [ref=e92]:
+              - generic [ref=e93]: Sebelas Coffee Concat
+              - text: sebelascoffeeconcat.myolsera.com
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - generic [ref=e96]: 1 Tahun+
+          - generic [ref=e98] [cursor=pointer]:
+            - img "Sebelas Coffee Monjali" [ref=e101]
+            - generic [ref=e102]:
+              - generic [ref=e103]: Sebelas Coffee Monjali
+              - text: sebelascoffeemonjali.myolsera.com
+            - generic [ref=e104]:
+              - img [ref=e105]
+              - generic [ref=e106]: 1 Tahun+
+          - generic [ref=e108] [cursor=pointer]:
+            - img "Sebelas Coffee Gejayan" [ref=e111]
+            - generic [ref=e112]:
+              - generic [ref=e113]: Sebelas Coffee Gejayan
+              - text: sebelascoffeegejayan.myolsera.com
+            - generic [ref=e114]:
+              - img [ref=e115]
+              - generic [ref=e116]: 1 Tahun+
+          - generic [ref=e118] [cursor=pointer]:
+            - img "Sebelas Coffee HOS Cokro" [ref=e121]
+            - generic [ref=e122]:
+              - generic [ref=e123]: Sebelas Coffee HOS Cokro
+              - text: sebelascoffeehos.myolsera.com
+            - generic [ref=e124]:
+              - img [ref=e125]
+              - generic [ref=e126]: 1 Tahun+
+          - generic [ref=e128] [cursor=pointer]:
+            - img "Sebelas Coffee Veteran" [ref=e131]
+            - generic [ref=e132]:
+              - generic [ref=e133]: Sebelas Coffee Veteran
+              - text: sebelascoffeeveteran.myolsera.com
+            - generic [ref=e134]:
+              - img [ref=e135]
+              - generic [ref=e136]: 1 Tahun+
+          - generic [ref=e138] [cursor=pointer]:
+            - img "Warehouse Sebelas Coffee" [ref=e141]
+            - generic [ref=e142]:
+              - generic [ref=e143]: Warehouse Sebelas Coffee
+              - text: warehousesebelascoffee.myolsera.com
+            - generic [ref=e144]:
+              - img [ref=e145]
+              - generic [ref=e146]: 1 Tahun+
+          - button "" [ref=e148] [cursor=pointer]:
+            - generic [ref=e149]: 
+      - generic [ref=e153]:
+        - generic [ref=e155] [cursor=pointer]:
+          - text: Perpanjang Toko
+          - generic [ref=e156]: 
+        - generic [ref=e158] [cursor=pointer]:
+          - img "Sebelas Coffee Veteran" [ref=e174]
+          - heading "Sebelas Coffee Veteran" [level=5] [ref=e175]
+          - generic [ref=e162]: Pemilik
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - img [ref=e165]
+              - generic [ref=e166]: 1 Tahun+
+            - generic [ref=e167]:
+              - img [ref=e168]
+              - text: 1 Tahun+
+          - button "Masuk ke toko " [ref=e171]:
+            - generic [ref=e172]:
+              - text: Masuk ke toko
+              - generic [ref=e173]: 
+    - text: 
+    - generic: 

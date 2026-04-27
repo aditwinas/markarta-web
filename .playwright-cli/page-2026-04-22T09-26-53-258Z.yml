@@ -1,0 +1,368 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e12]:
+      - generic [ref=e15]:
+        - img "Logo" [ref=e17]
+        - generic [ref=e18]:
+          - link "Kiosk" [ref=e19] [cursor=pointer]:
+            - /url: /kiosk
+            - button "Kiosk" [ref=e20]:
+              - img [ref=e22]
+              - paragraph [ref=e28]: Kiosk
+          - link "Gallery" [ref=e29] [cursor=pointer]:
+            - /url: /gallery
+            - button "Gallery" [ref=e30]:
+              - img [ref=e32]
+              - paragraph [ref=e36]: Gallery
+          - link "Statistics" [ref=e37] [cursor=pointer]:
+            - /url: /statistics
+            - button "Statistics" [ref=e38]:
+              - img [ref=e40]
+              - paragraph [ref=e43]: Statistics
+          - link "Transaction" [ref=e44] [cursor=pointer]:
+            - /url: /transactions
+            - button "Transaction" [active] [ref=e45]:
+              - img [ref=e47]
+              - paragraph [ref=e50]: Transaction
+          - link "Frame Photo" [ref=e51] [cursor=pointer]:
+            - /url: /frame
+            - button "Frame Photo" [ref=e52]:
+              - img [ref=e54]
+              - paragraph [ref=e56]: Frame Photo
+          - link "Frame GIF" [ref=e57] [cursor=pointer]:
+            - /url: /framegif
+            - button "Frame GIF" [ref=e58]:
+              - img [ref=e60]
+              - paragraph [ref=e62]: Frame GIF
+          - link "Frame Category" [ref=e63] [cursor=pointer]:
+            - /url: /frame-category
+            - button "Frame Category" [ref=e64]:
+              - img [ref=e66]
+              - paragraph [ref=e68]: Frame Category
+          - link "Logo Soft File" [ref=e69] [cursor=pointer]:
+            - /url: /qr-digital
+            - button "Logo Soft File" [ref=e70]:
+              - img [ref=e72]
+              - paragraph [ref=e78]: Logo Soft File
+          - link "Voucher" [ref=e79] [cursor=pointer]:
+            - /url: /voucher
+            - button "Voucher" [ref=e80]:
+              - img [ref=e82]
+              - paragraph [ref=e84]: Voucher
+          - link "Payment Key" [ref=e85] [cursor=pointer]:
+            - /url: /paymentkey
+            - button "Payment Key" [ref=e86]:
+              - img [ref=e88]
+              - paragraph [ref=e91]: Payment Key
+          - link "Branch Manager" [ref=e92] [cursor=pointer]:
+            - /url: /branch
+            - button "Branch Manager" [ref=e93]:
+              - img [ref=e95]
+              - paragraph [ref=e99]: Branch Manager
+      - generic [ref=e100]:
+        - menubar [ref=e103]:
+          - menuitem "Hi, hi.snapobox" [ref=e104]:
+            - paragraph [ref=e105]: Hi, hi.snapobox
+            - button [ref=e106] [cursor=pointer]:
+              - img [ref=e107]
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - paragraph [ref=e132]: Kiosk List
+              - textbox "Nama Kiosk" [ref=e136]
+            - alert [ref=e137]:
+              - img [ref=e138]
+              - heading "Note" [level=5] [ref=e140]
+              - list [ref=e142]:
+                - listitem [ref=e143]: Income tercatat mulai per tanggal 27 September 2024
+                - listitem [ref=e144]: Income yang tercatat adalah Gross Income yang ditetapkan per kiosk ataupun penggunaan voucher yang statusnya berhasil
+                - listitem [ref=e145]: Untuk mendapatkan Net Income, silahkan cek biller yang digunakan
+            - generic [ref=e146]:
+              - table [ref=e148]:
+                - rowgroup [ref=e149]:
+                  - row "Kiosk Name Total Transactions Gross Income Total Transactions Today Gross Income Today Action" [ref=e150]:
+                    - columnheader "Kiosk Name" [ref=e151]
+                    - columnheader "Total Transactions" [ref=e152]
+                    - columnheader "Gross Income" [ref=e153]
+                    - columnheader "Total Transactions Today" [ref=e154]
+                    - columnheader "Gross Income Today" [ref=e155]
+                    - columnheader "Action" [ref=e156]
+                - rowgroup [ref=e157]:
+                  - row "SOB JOGJA - COUVEE JAKAL 14483 transactions Rp 396.650.000 0 transactions Rp 0" [ref=e158]:
+                    - cell "SOB JOGJA - COUVEE JAKAL" [ref=e159]
+                    - cell "14483 transactions" [ref=e160]
+                    - cell "Rp 396.650.000" [ref=e161]
+                    - cell "0 transactions" [ref=e162]
+                    - cell "Rp 0" [ref=e163]
+                    - cell [ref=e164]:
+                      - link [ref=e166] [cursor=pointer]:
+                        - /url: /transactions/50
+                        - button [ref=e167]:
+                          - img [ref=e168]
+                  - row "SOB JOGJA - BALCOS 19857 transactions Rp 563.671.000 4 transactions Rp 120.000" [ref=e171]:
+                    - cell "SOB JOGJA - BALCOS" [ref=e172]
+                    - cell "19857 transactions" [ref=e173]
+                    - cell "Rp 563.671.000" [ref=e174]
+                    - cell "4 transactions" [ref=e175]
+                    - cell "Rp 120.000" [ref=e176]
+                    - cell [ref=e177]:
+                      - link [ref=e179] [cursor=pointer]:
+                        - /url: /transactions/52
+                        - button [ref=e180]:
+                          - img [ref=e181]
+                  - row "SOB JOGJA - HOS 14077 transactions Rp 409.177.000 2 transactions Rp 60.000" [ref=e184]:
+                    - cell "SOB JOGJA - HOS" [ref=e185]
+                    - cell "14077 transactions" [ref=e186]
+                    - cell "Rp 409.177.000" [ref=e187]
+                    - cell "2 transactions" [ref=e188]
+                    - cell "Rp 60.000" [ref=e189]
+                    - cell [ref=e190]:
+                      - link [ref=e192] [cursor=pointer]:
+                        - /url: /transactions/71
+                        - button [ref=e193]:
+                          - img [ref=e194]
+                  - row "SOB SALATIGA - ANAK PANAH 21171 transactions Rp 637.094.000 14 transactions Rp 420.000" [ref=e197]:
+                    - cell "SOB SALATIGA - ANAK PANAH" [ref=e198]
+                    - cell "21171 transactions" [ref=e199]
+                    - cell "Rp 637.094.000" [ref=e200]
+                    - cell "14 transactions" [ref=e201]
+                    - cell "Rp 420.000" [ref=e202]
+                    - cell [ref=e203]:
+                      - link [ref=e205] [cursor=pointer]:
+                        - /url: /transactions/72
+                        - button [ref=e206]:
+                          - img [ref=e207]
+                  - row "SOB PEKANBARU - TETRA 22655 transactions Rp 740.396.000 5 transactions Rp 180.000" [ref=e210]:
+                    - cell "SOB PEKANBARU - TETRA" [ref=e211]
+                    - cell "22655 transactions" [ref=e212]
+                    - cell "Rp 740.396.000" [ref=e213]
+                    - cell "5 transactions" [ref=e214]
+                    - cell "Rp 180.000" [ref=e215]
+                    - cell [ref=e216]:
+                      - link [ref=e218] [cursor=pointer]:
+                        - /url: /transactions/73
+                        - button [ref=e219]:
+                          - img [ref=e220]
+              - generic [ref=e223]:
+                - paragraph [ref=e224]: 1 - 5 dari 28 data
+                - navigation "pagination" [ref=e225]:
+                  - list [ref=e226]:
+                    - listitem [ref=e227]:
+                      - generic "Go to previous page" [ref=e228]:
+                        - img [ref=e229]
+                        - generic [ref=e231]: Previous
+                    - listitem [ref=e232]:
+                      - generic [ref=e233]: "1"
+                    - listitem [ref=e234]:
+                      - generic [ref=e235]: "2"
+                    - listitem [ref=e236]: ...
+                    - listitem [ref=e237]:
+                      - generic [ref=e238]: "6"
+                    - listitem [ref=e239]:
+                      - generic "Go to next page" [ref=e240]:
+                        - generic [ref=e241]: Next
+                        - img [ref=e242]
+          - generic [ref=e244]:
+            - paragraph [ref=e246]: Transaction List
+            - generic [ref=e247]:
+              - table [ref=e249]:
+                - rowgroup [ref=e250]:
+                  - row "ID Transaction ID Biller ID Kiosk Waktu Status Transaksi Status Sesi Type Harga Jumlah Print Voucher Supplier" [ref=e251]:
+                    - columnheader "ID" [ref=e252]
+                    - columnheader "Transaction ID" [ref=e253]
+                    - columnheader "Biller ID" [ref=e254]
+                    - columnheader "Kiosk" [ref=e255]
+                    - columnheader "Waktu" [ref=e256]
+                    - columnheader "Status Transaksi" [ref=e257]
+                    - columnheader "Status Sesi" [ref=e258]
+                    - columnheader "Type" [ref=e259]
+                    - columnheader "Harga" [ref=e260]
+                    - columnheader "Jumlah Print" [ref=e261]
+                    - columnheader "Voucher" [ref=e262]
+                    - columnheader "Supplier" [ref=e263]
+                - rowgroup [ref=e264]:
+                  - row "1 UQIX_130fda54-95bf-46c9-b84a-f18760997250 57da1784-68a8-456e-a8d4-ff18968c9cad SOB JOGJA - GACA 19 2026-04-22 16:24:58 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e265]:
+                    - cell "1" [ref=e266]
+                    - cell "UQIX_130fda54-95bf-46c9-b84a-f18760997250" [ref=e267]
+                    - cell "57da1784-68a8-456e-a8d4-ff18968c9cad" [ref=e268]
+                    - cell "SOB JOGJA - GACA 19" [ref=e269]
+                    - cell "2026-04-22 16:24:58" [ref=e270]
+                    - cell "success" [ref=e271]:
+                      - paragraph [ref=e272]: success
+                    - cell [ref=e273]:
+                      - img [ref=e274]
+                    - cell "SESSION" [ref=e277]
+                    - cell "Rp 30.000" [ref=e278]
+                    - cell "1" [ref=e279]
+                    - cell "-" [ref=e280]:
+                      - paragraph [ref=e281]: "-"
+                    - cell "MIDTRANS" [ref=e282]
+                  - row "2 EKLM_cc2e7f8b-e809-4aab-9bc7-e93fe8513088 ec03fa3c-50ae-475b-b37d-a101b0016bdd SOB SIDOARJO - ARAH 2026-04-22 16:24:34 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e283]:
+                    - cell "2" [ref=e284]
+                    - cell "EKLM_cc2e7f8b-e809-4aab-9bc7-e93fe8513088" [ref=e285]
+                    - cell "ec03fa3c-50ae-475b-b37d-a101b0016bdd" [ref=e286]
+                    - cell "SOB SIDOARJO - ARAH" [ref=e287]
+                    - cell "2026-04-22 16:24:34" [ref=e288]
+                    - cell "success" [ref=e289]:
+                      - paragraph [ref=e290]: success
+                    - cell [ref=e291]:
+                      - img [ref=e292]
+                    - cell "SESSION" [ref=e295]
+                    - cell "Rp 30.000" [ref=e296]
+                    - cell "1" [ref=e297]
+                    - cell "-" [ref=e298]:
+                      - paragraph [ref=e299]: "-"
+                    - cell "MIDTRANS" [ref=e300]
+                  - row "3 LCLL_a3e41972-436f-4f5a-8bdc-7cac36cacd44 51b51f09-0025-4586-b574-c9e0be56aa66 SOB SOLO - TETRA 2026-04-22 16:23:58 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e301]:
+                    - cell "3" [ref=e302]
+                    - cell "LCLL_a3e41972-436f-4f5a-8bdc-7cac36cacd44" [ref=e303]
+                    - cell "51b51f09-0025-4586-b574-c9e0be56aa66" [ref=e304]
+                    - cell "SOB SOLO - TETRA" [ref=e305]
+                    - cell "2026-04-22 16:23:58" [ref=e306]
+                    - cell "success" [ref=e307]:
+                      - paragraph [ref=e308]: success
+                    - cell [ref=e309]:
+                      - img [ref=e310]
+                    - cell "SESSION" [ref=e313]
+                    - cell "Rp 30.000" [ref=e314]
+                    - cell "1" [ref=e315]
+                    - cell "-" [ref=e316]:
+                      - paragraph [ref=e317]: "-"
+                    - cell "MIDTRANS" [ref=e318]
+                  - row "4 SHYR_90f67520-746f-4680-a234-9545818fff05 3db2b27b-26e7-45e4-bff7-d43094c60dc8 SOB SEMARANG - ANAK PANAH UNIKA 2026-04-22 16:22:16 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e319]:
+                    - cell "4" [ref=e320]
+                    - cell "SHYR_90f67520-746f-4680-a234-9545818fff05" [ref=e321]
+                    - cell "3db2b27b-26e7-45e4-bff7-d43094c60dc8" [ref=e322]
+                    - cell "SOB SEMARANG - ANAK PANAH UNIKA" [ref=e323]
+                    - cell "2026-04-22 16:22:16" [ref=e324]
+                    - cell "success" [ref=e325]:
+                      - paragraph [ref=e326]: success
+                    - cell [ref=e327]:
+                      - img [ref=e328]
+                    - cell "SESSION" [ref=e330]
+                    - cell "Rp 30.000" [ref=e331]
+                    - cell "1" [ref=e332]
+                    - cell "-" [ref=e333]:
+                      - paragraph [ref=e334]: "-"
+                    - cell "MIDTRANS" [ref=e335]
+                  - row "5 RILX_d1e38a1b-518e-4b93-96a9-9186c1db5325 c449495b-68dd-4fa3-90cd-f85c0c612160 SOB MEDAN - CNB MANSYUR 2026-04-22 16:19:50 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e336]:
+                    - cell "5" [ref=e337]
+                    - cell "RILX_d1e38a1b-518e-4b93-96a9-9186c1db5325" [ref=e338]
+                    - cell "c449495b-68dd-4fa3-90cd-f85c0c612160" [ref=e339]
+                    - cell "SOB MEDAN - CNB MANSYUR" [ref=e340]
+                    - cell "2026-04-22 16:19:50" [ref=e341]
+                    - cell "success" [ref=e342]:
+                      - paragraph [ref=e343]: success
+                    - cell [ref=e344]:
+                      - img [ref=e345]
+                    - cell "SESSION" [ref=e347]
+                    - cell "Rp 30.000" [ref=e348]
+                    - cell "1" [ref=e349]
+                    - cell "-" [ref=e350]:
+                      - paragraph [ref=e351]: "-"
+                    - cell "MIDTRANS" [ref=e352]
+                  - row "6 SHYR_e437ec38-ead6-479a-b63d-72b66713c6c5 7569859a-7847-4ada-9d37-bbbd4d23d4d4 SOB SEMARANG - ANAK PANAH UNIKA 2026-04-22 16:17:49 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e353]:
+                    - cell "6" [ref=e354]
+                    - cell "SHYR_e437ec38-ead6-479a-b63d-72b66713c6c5" [ref=e355]
+                    - cell "7569859a-7847-4ada-9d37-bbbd4d23d4d4" [ref=e356]
+                    - cell "SOB SEMARANG - ANAK PANAH UNIKA" [ref=e357]
+                    - cell "2026-04-22 16:17:49" [ref=e358]
+                    - cell "success" [ref=e359]:
+                      - paragraph [ref=e360]: success
+                    - cell [ref=e361]:
+                      - img [ref=e362]
+                    - cell "SESSION" [ref=e364]
+                    - cell "Rp 30.000" [ref=e365]
+                    - cell "1" [ref=e366]
+                    - cell "-" [ref=e367]:
+                      - paragraph [ref=e368]: "-"
+                    - cell "MIDTRANS" [ref=e369]
+                  - row "7 NUTL_8da332a5-dba6-4232-a9b1-ef85e6d0a3d2 88a4df0f-bf0f-4d51-97aa-f086e5be8cf5 SOB BALI - PLAZA RENON 2026-04-22 16:16:19 success SESSION Rp 35.000 1 - MIDTRANS" [ref=e370]:
+                    - cell "7" [ref=e371]
+                    - cell "NUTL_8da332a5-dba6-4232-a9b1-ef85e6d0a3d2" [ref=e372]
+                    - cell "88a4df0f-bf0f-4d51-97aa-f086e5be8cf5" [ref=e373]
+                    - cell "SOB BALI - PLAZA RENON" [ref=e374]
+                    - cell "2026-04-22 16:16:19" [ref=e375]
+                    - cell "success" [ref=e376]:
+                      - paragraph [ref=e377]: success
+                    - cell [ref=e378]:
+                      - img [ref=e379]
+                    - cell "SESSION" [ref=e381]
+                    - cell "Rp 35.000" [ref=e382]
+                    - cell "1" [ref=e383]
+                    - cell "-" [ref=e384]:
+                      - paragraph [ref=e385]: "-"
+                    - cell "MIDTRANS" [ref=e386]
+                  - row "8 YXJY_82eebd5b-2fc8-4711-88ab-7538212cac32 e2b3c613-f3c1-4c3e-a2d4-4802e4c5e0b3 SOB JOGJA - COUVEE TAMSIS 2026-04-22 16:14:14 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e387]:
+                    - cell "8" [ref=e388]
+                    - cell "YXJY_82eebd5b-2fc8-4711-88ab-7538212cac32" [ref=e389]
+                    - cell "e2b3c613-f3c1-4c3e-a2d4-4802e4c5e0b3" [ref=e390]
+                    - cell "SOB JOGJA - COUVEE TAMSIS" [ref=e391]
+                    - cell "2026-04-22 16:14:14" [ref=e392]
+                    - cell "success" [ref=e393]:
+                      - paragraph [ref=e394]: success
+                    - cell [ref=e395]:
+                      - img [ref=e396]
+                    - cell "SESSION" [ref=e398]
+                    - cell "Rp 30.000" [ref=e399]
+                    - cell "1" [ref=e400]
+                    - cell "-" [ref=e401]:
+                      - paragraph [ref=e402]: "-"
+                    - cell "MIDTRANS" [ref=e403]
+                  - row "9 SHYR_89b83060-2bb2-4cdb-aaa8-dd0ec4e5beec cb726e05-60a4-46a8-94e3-f914d3a94f6d SOB SEMARANG - ANAK PANAH UNIKA 2026-04-22 16:13:24 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e404]:
+                    - cell "9" [ref=e405]
+                    - cell "SHYR_89b83060-2bb2-4cdb-aaa8-dd0ec4e5beec" [ref=e406]
+                    - cell "cb726e05-60a4-46a8-94e3-f914d3a94f6d" [ref=e407]
+                    - cell "SOB SEMARANG - ANAK PANAH UNIKA" [ref=e408]
+                    - cell "2026-04-22 16:13:24" [ref=e409]
+                    - cell "success" [ref=e410]:
+                      - paragraph [ref=e411]: success
+                    - cell [ref=e412]:
+                      - img [ref=e413]
+                    - cell "SESSION" [ref=e415]
+                    - cell "Rp 30.000" [ref=e416]
+                    - cell "1" [ref=e417]
+                    - cell "-" [ref=e418]:
+                      - paragraph [ref=e419]: "-"
+                    - cell "MIDTRANS" [ref=e420]
+                  - row "10 RILX_5293ea8a-9f79-42bb-b296-08b54647a489 9fb65a7c-6d38-485d-ab93-f8738e4f268c SOB MEDAN - CNB MANSYUR 2026-04-22 16:12:31 success SESSION Rp 30.000 1 - MIDTRANS" [ref=e421]:
+                    - cell "10" [ref=e422]
+                    - cell "RILX_5293ea8a-9f79-42bb-b296-08b54647a489" [ref=e423]
+                    - cell "9fb65a7c-6d38-485d-ab93-f8738e4f268c" [ref=e424]
+                    - cell "SOB MEDAN - CNB MANSYUR" [ref=e425]
+                    - cell "2026-04-22 16:12:31" [ref=e426]
+                    - cell "success" [ref=e427]:
+                      - paragraph [ref=e428]: success
+                    - cell [ref=e429]:
+                      - img [ref=e430]
+                    - cell "SESSION" [ref=e432]
+                    - cell "Rp 30.000" [ref=e433]
+                    - cell "1" [ref=e434]
+                    - cell "-" [ref=e435]:
+                      - paragraph [ref=e436]: "-"
+                    - cell "MIDTRANS" [ref=e437]
+              - generic [ref=e438]:
+                - paragraph [ref=e439]: 1 - 10 dari 117 data
+                - navigation "pagination" [ref=e440]:
+                  - list [ref=e441]:
+                    - listitem [ref=e442]:
+                      - generic "Go to previous page" [ref=e443]:
+                        - img [ref=e444]
+                        - generic [ref=e446]: Previous
+                    - listitem [ref=e447]:
+                      - generic [ref=e448]: "1"
+                    - listitem [ref=e449]:
+                      - generic [ref=e450]: "2"
+                    - listitem [ref=e451]: ...
+                    - listitem [ref=e452]:
+                      - generic [ref=e453]: "12"
+                    - listitem [ref=e454]:
+                      - generic "Go to next page" [ref=e455]:
+                        - generic [ref=e456]: Next
+                        - img [ref=e457]
+    - generic [ref=e116]:
+      - heading "header" [level=2] [ref=e117]
+      - paragraph [ref=e118]: header
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e11]: Photolab - Dashboard

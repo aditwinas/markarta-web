@@ -1,0 +1,11 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - img "Logo" [ref=e6]
+      - paragraph [ref=e7]: Dashboard
+    - textbox "Email" [ref=e8]
+    - textbox "Password" [ref=e9]
+    - button "Login" [ref=e10] [cursor=pointer]
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e11]

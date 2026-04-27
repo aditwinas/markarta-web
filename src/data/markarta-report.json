@@ -1,0 +1,653 @@
+{
+  "reportBasis": {
+    "label": "Basis report yang dipakai sekarang",
+    "monthlyCurrent": "1 April 2026 - 25 April 2026",
+    "monthlyPrevious": "1 Maret 2026 - 25 Maret 2026",
+    "dailyCurrent": "25 April 2026",
+    "dailyPrevious": "24 April 2026",
+    "updatedAt": "27 April 2026, 03.00 WIB"
+  },
+  "portfolioSummary": {
+    "activeBrands": 0,
+    "trackedBrands": 6,
+    "monthlyRevenue": 2252163260,
+    "monthlyChangePct": 25.43009846719084,
+    "dailyRevenue": 98181350,
+    "dailyChangePct": 7.689881973819368
+  },
+  "brandReports": [
+    {
+      "id": "sebelas",
+      "name": "Sebelas Coffee",
+      "source": "Olsera",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Olsera gagal pada run ini.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "Rp1.570.330.760",
+          "note": "Semua outlet Sebelas Coffee",
+          "changePct": 57.48940264659432
+        },
+        {
+          "label": "Omset Harian",
+          "value": "Rp66.801.350",
+          "note": "25 April 2026 vs 24 April 2026",
+          "changePct": -0.2227020132052884
+        },
+        {
+          "label": "Top Product",
+          "value": "LATTE",
+          "note": "Snapshot SKU terakhir terverifikasi"
+        },
+        {
+          "label": "Outlet Terkuat",
+          "value": "HOS Cokro",
+          "note": "MTD Rp324.482.400"
+        }
+      ],
+      "table": {
+        "title": "Omset per outlet",
+        "description": "MTD April dan performa harian outlet inti Sebelas Coffee.",
+        "columns": [
+          {
+            "key": "outlet",
+            "label": "Outlet"
+          },
+          {
+            "key": "mtd",
+            "label": "Omset MTD",
+            "align": "right"
+          },
+          {
+            "key": "mtdChange",
+            "label": "Vs Bulan Lalu",
+            "align": "right"
+          },
+          {
+            "key": "daily",
+            "label": "25 Apr",
+            "align": "right"
+          },
+          {
+            "key": "dailyChange",
+            "label": "Vs 24 Apr",
+            "align": "right"
+          }
+        ],
+        "rows": [
+          {
+            "outlet": "Sebelas Coffee HOS Cokro",
+            "mtd": "Rp324.482.400",
+            "mtdChange": "+57,3%",
+            "daily": "Rp15.699.500",
+            "dailyChange": "+11,3%"
+          },
+          {
+            "outlet": "Sebelas Coffee Veteran",
+            "mtd": "Rp291.940.400",
+            "mtdChange": "+53,8%",
+            "daily": "Rp14.100.500",
+            "dailyChange": "+3,1%"
+          },
+          {
+            "outlet": "Sebelas Coffee Nologaten",
+            "mtd": "Rp272.667.300",
+            "mtdChange": "+34,4%",
+            "daily": "Rp8.412.400",
+            "dailyChange": "-29,8%"
+          },
+          {
+            "outlet": "Sebelas Coffee Gejayan",
+            "mtd": "Rp238.697.400",
+            "mtdChange": "+88,5%",
+            "daily": "Rp10.851.450",
+            "dailyChange": "-12,2%"
+          },
+          {
+            "outlet": "Sebelas Coffee Auriga Jakal",
+            "mtd": "Rp228.983.400",
+            "mtdChange": "+698,7%",
+            "daily": "Rp10.945.000",
+            "dailyChange": "+27,2%"
+          },
+          {
+            "outlet": "Sebelas Coffee Concat",
+            "mtd": "Rp131.867.460",
+            "mtdChange": "+31,1%",
+            "daily": "Rp6.792.500",
+            "dailyChange": "+9,1%"
+          },
+          {
+            "outlet": "Sebelas Coffee Monjali",
+            "mtd": "Rp81.692.400",
+            "mtdChange": "-42,6%",
+            "daily": "Rp0",
+            "dailyChange": "-"
+          }
+        ]
+      },
+      "rankings": [
+        {
+          "title": "Top product all outlet",
+          "description": "Ranking menu utama, sudah dibersihkan dari ADD-ON dan PARKIR.",
+          "items": [
+            {
+              "name": "LATTE",
+              "value": "8.896 cup",
+              "detail": "Rp188.159.000"
+            },
+            {
+              "name": "NEERA",
+              "value": "6.990 cup",
+              "detail": "Rp167.428.900"
+            },
+            {
+              "name": "JEEVA",
+              "value": "5.505 cup",
+              "detail": "Rp124.422.300"
+            },
+            {
+              "name": "AMERICANO (AMERICANO BOLD)",
+              "value": "4.640 cup",
+              "detail": "Rp89.891.800"
+            }
+          ]
+        },
+        {
+          "title": "Top product per outlet",
+          "description": "Snapshot SKU outlet terakhir yang terverifikasi, dipertahankan sambil endpoint SKU lintas outlet distabilkan.",
+          "items": [
+            {
+              "name": "Veteran",
+              "value": "LATTE - Reguler",
+              "detail": "1.287 cup"
+            },
+            {
+              "name": "HOS Cokro",
+              "value": "LATTE - Reguler",
+              "detail": "1.417 cup"
+            },
+            {
+              "name": "Gejayan",
+              "value": "LATTE - Reguler",
+              "detail": "1.130 cup"
+            },
+            {
+              "name": "Monjali",
+              "value": "LATTE - Reguler",
+              "detail": "551 cup"
+            },
+            {
+              "name": "Concat",
+              "value": "LATTE - Reguler",
+              "detail": "736 cup"
+            },
+            {
+              "name": "Nologaten",
+              "value": "LATTE - Reguler",
+              "detail": "1.171 cup"
+            },
+            {
+              "name": "Auriga Jakal",
+              "value": "NEERA - Reguler",
+              "detail": "885 cup"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Basis data fallback yang masih ditampilkan: 25 April 2026 vs 24 April 2026.",
+        "Refresh otomatis gagal pada 27 April 2026, 03.00 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
+        "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
+        "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
+        "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
+      ]
+    },
+    {
+      "id": "snapobox",
+      "name": "Snapobox",
+      "source": "Photolab",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Photolab gagal pada run ini.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "Rp528.500.000",
+          "note": "Semua kiosk Snapobox",
+          "changePct": -22.42600380163955
+        },
+        {
+          "label": "Omset Harian",
+          "value": "Rp26.010.000",
+          "note": "25 April 2026 vs 24 April 2026",
+          "changePct": 39.913932221624535
+        },
+        {
+          "label": "Top Kiosk",
+          "value": "SOB MALANG - JOKOPI",
+          "note": "MTD Rp49.290.000"
+        },
+        {
+          "label": "Kiosk Live",
+          "value": "28 unit",
+          "note": "Refresh harian berjalan langsung ke API Photolab"
+        }
+      ],
+      "table": {
+        "title": "Top kiosk bulan ini",
+        "description": "Kiosk dengan omset tertinggi dan laju perbandingan harian yang relevan.",
+        "columns": [
+          {
+            "key": "kiosk",
+            "label": "Kiosk"
+          },
+          {
+            "key": "mtd",
+            "label": "Omset MTD",
+            "align": "right"
+          },
+          {
+            "key": "mtdChange",
+            "label": "Vs Bulan Lalu",
+            "align": "right"
+          },
+          {
+            "key": "daily",
+            "label": "25 Apr",
+            "align": "right"
+          },
+          {
+            "key": "dailyChange",
+            "label": "Vs 24 Apr",
+            "align": "right"
+          }
+        ],
+        "rows": [
+          {
+            "kiosk": "SOB MALANG - JOKOPI",
+            "mtd": "Rp49.290.000",
+            "mtdChange": "-8,4%",
+            "daily": "Rp2.550.000",
+            "dailyChange": "+34,9%"
+          },
+          {
+            "kiosk": "SOB MEDAN - CNB MANSYUR",
+            "mtd": "Rp46.740.000",
+            "mtdChange": "-15,0%",
+            "daily": "Rp1.710.000",
+            "dailyChange": "-1,7%"
+          },
+          {
+            "kiosk": "SOB SALATIGA - ANAK PANAH",
+            "mtd": "Rp45.960.000",
+            "mtdChange": "-7,5%",
+            "daily": "Rp2.370.000",
+            "dailyChange": "+113,5%"
+          },
+          {
+            "kiosk": "SOB PEKANBARU - TETRA",
+            "mtd": "Rp45.300.000",
+            "mtdChange": "-21,1%",
+            "daily": "Rp2.190.000",
+            "dailyChange": "+32,7%"
+          },
+          {
+            "kiosk": "SOB SEMARANG - ANAK PANAH UNIKA",
+            "mtd": "Rp35.250.000",
+            "mtdChange": "-12,6%",
+            "daily": "Rp2.130.000",
+            "dailyChange": "+54,3%"
+          },
+          {
+            "kiosk": "SOB PONTIANAK - UPZ",
+            "mtd": "Rp25.290.000",
+            "mtdChange": "-8,7%",
+            "daily": "Rp1.320.000",
+            "dailyChange": "+63,0%"
+          }
+        ]
+      },
+      "rankings": [
+        {
+          "title": "Performa harian paling cepat naik",
+          "description": "Kiosk yang melonjak paling besar pada hari tertutup terakhir.",
+          "items": [
+            {
+              "name": "SOB PALEMBANG - TETRA",
+              "value": "+250,0%",
+              "detail": "Rp420.000 vs Rp120.000"
+            },
+            {
+              "name": "SOB SOLO - TETRA",
+              "value": "+179,2%",
+              "detail": "Rp2.010.000 vs Rp720.000"
+            },
+            {
+              "name": "SOB JOGJA - GACA 60",
+              "value": "+143,8%",
+              "detail": "Rp1.170.000 vs Rp480.000"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Basis data fallback yang masih ditampilkan: 25 April 2026 vs 24 April 2026.",
+        "Refresh otomatis gagal pada 27 April 2026, 03.00 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
+        "Snapobox belum punya dimensi produk yang stabil di dashboard saat ini, jadi fokus utama dashboard adalah performa kiosk.",
+        "Masalah frame popularity bulanan tetap perlu dibereskan oleh developer Snapobox karena API publik masih memakai lifetime count.",
+        "Semua angka gross income dihitung dari transaksi sukses pada export range yang sama."
+      ]
+    },
+    {
+      "id": "zona",
+      "name": "Zona Massage",
+      "source": "LatePoint",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh LatePoint gagal pada run ini.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "Rp112.260.000",
+          "note": "Balcos Compound + Plemburan",
+          "changePct": -0.3904170363797693
+        },
+        {
+          "label": "Appointment MTD",
+          "value": "830",
+          "note": "Total booking bulan berjalan",
+          "changePct": 2.4691358024691357
+        },
+        {
+          "label": "Omset Harian",
+          "value": "Rp5.370.000",
+          "note": "25 April 2026 vs 24 April 2026",
+          "changePct": -4.618117229129663
+        },
+        {
+          "label": "Appointment Harian",
+          "value": "40",
+          "note": "25 April 2026 vs 24 April 2026",
+          "changePct": -4.761904761904762
+        }
+      ],
+      "table": {
+        "title": "Performa outlet",
+        "description": "Omset, appointment, dan laju outlet Zona Massage.",
+        "columns": [
+          {
+            "key": "outlet",
+            "label": "Outlet"
+          },
+          {
+            "key": "mtd",
+            "label": "Omset MTD",
+            "align": "right"
+          },
+          {
+            "key": "mtdChange",
+            "label": "Vs Bulan Lalu",
+            "align": "right"
+          },
+          {
+            "key": "appointments",
+            "label": "Appointment",
+            "align": "right"
+          },
+          {
+            "key": "daily",
+            "label": "25 Apr",
+            "align": "right"
+          }
+        ],
+        "rows": [
+          {
+            "outlet": "Balcos Compound",
+            "mtd": "Rp74.210.000",
+            "mtdChange": "-0%",
+            "appointments": "530",
+            "daily": "Rp3.600.000"
+          },
+          {
+            "outlet": "Plemburan",
+            "mtd": "Rp38.050.000",
+            "mtdChange": "-1%",
+            "appointments": "300",
+            "daily": "Rp1.770.000"
+          }
+        ]
+      },
+      "rankings": [
+        {
+          "title": "Top service April",
+          "description": "Rumus ranking: Service + Durasi dari halaman Appointments. Ranking detail memakai snapshot terakhir yang terverifikasi.",
+          "items": [
+            {
+              "name": "Balcos Compound",
+              "value": "Full Body Massage 90 menit",
+              "detail": "140 appointment"
+            },
+            {
+              "name": "Plemburan",
+              "value": "Full Body Massage 60 menit",
+              "detail": "85 appointment"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Basis data fallback yang masih ditampilkan: 25 April 2026 vs 24 April 2026.",
+        "Refresh otomatis gagal pada 27 April 2026, 03.00 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
+        "Omset dan appointment sudah direfresh ke basis tertutup lewat widget performance LatePoint.",
+        "Top service masih memakai snapshot Appointments terakhir yang terverifikasi sampai ranking service ikut diotomatisasi penuh."
+      ]
+    },
+    {
+      "id": "snaposnap",
+      "name": "Snap O' Snap",
+      "source": "Google Sheet",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Google Sheet gagal pada run ini.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "Rp41.072.500",
+          "note": "4 cabang Snap O' Snap",
+          "changePct": 819.8768197088466
+        },
+        {
+          "label": "Omset Harian",
+          "value": "Rp0",
+          "note": "25 April 2026 vs 24 April 2026",
+          "changePct": null
+        },
+        {
+          "label": "Top Paket",
+          "value": "BASIC SNAP",
+          "note": "142 transaksi • Rp10.227.500"
+        },
+        {
+          "label": "Top Kategori",
+          "value": "FRIEND",
+          "note": "153 transaksi • Rp20.552.500"
+        }
+      ],
+      "table": {
+        "title": "Omset per cabang",
+        "description": "Cabang Snap O' Snap dengan breakdown MTD dan daily tertutup terakhir.",
+        "columns": [
+          {
+            "key": "cabang",
+            "label": "Cabang"
+          },
+          {
+            "key": "mtd",
+            "label": "Omset MTD",
+            "align": "right"
+          },
+          {
+            "key": "mtdChange",
+            "label": "Vs Bulan Lalu",
+            "align": "right"
+          },
+          {
+            "key": "daily",
+            "label": "25 Apr",
+            "align": "right"
+          },
+          {
+            "key": "dailyChange",
+            "label": "Vs 24 Apr",
+            "align": "right"
+          }
+        ],
+        "rows": [
+          {
+            "cabang": "GACA",
+            "mtd": "Rp19.315.000",
+            "mtdChange": "+38.530,0%",
+            "daily": "Rp0",
+            "dailyChange": "-"
+          },
+          {
+            "cabang": "VETERAN",
+            "mtd": "Rp8.017.500",
+            "mtdChange": "+5.245,0%",
+            "daily": "Rp0",
+            "dailyChange": "-"
+          },
+          {
+            "cabang": "HOS",
+            "mtd": "Rp11.085.000",
+            "mtdChange": "+9.137,5%",
+            "daily": "Rp0",
+            "dailyChange": "-"
+          },
+          {
+            "cabang": "SEMARANG",
+            "mtd": "Rp2.655.000",
+            "mtdChange": "-35,9%",
+            "daily": "Rp0",
+            "dailyChange": "-"
+          }
+        ]
+      },
+      "rankings": [
+        {
+          "title": "Top paket",
+          "description": "Ranking berdasarkan jumlah transaksi untuk periode April MTD.",
+          "items": [
+            {
+              "name": "BASIC SNAP",
+              "value": "142 transaksi",
+              "detail": "Rp10.227.500"
+            },
+            {
+              "name": "GROUPIES",
+              "value": "127 transaksi",
+              "detail": "Rp20.830.000"
+            },
+            {
+              "name": "SPECIAL SNAP",
+              "value": "95 transaksi",
+              "detail": "Rp9.750.000"
+            }
+          ]
+        },
+        {
+          "title": "Top kategori",
+          "description": "Kategori customer paling dominan di seluruh cabang.",
+          "items": [
+            {
+              "name": "FRIEND",
+              "value": "153 transaksi",
+              "detail": "Rp20.552.500"
+            },
+            {
+              "name": "(Kosong)",
+              "value": "149 transaksi",
+              "detail": "Rp14.280.000"
+            },
+            {
+              "name": "COUPLE",
+              "value": "39 transaksi",
+              "detail": "Rp3.087.500"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Basis data fallback yang masih ditampilkan: 25 April 2026 vs 24 April 2026.",
+        "Refresh otomatis gagal pada 27 April 2026, 03.00 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
+        "Spreadsheet dibaca read-only, tidak ada perubahan ke file sumber.",
+        "Header dan sheet name dibaca langsung dari tab overview masing-masing cabang agar automation tidak bergantung pada klik browser."
+      ]
+    },
+    {
+      "id": "tunas",
+      "name": "Tunas Mekar Dental",
+      "source": "Shopee Seller",
+      "state": "placeholder",
+      "note": "Placeholder tetap ditampilkan, menunggu integrasi data resmi dari Shopee.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "-",
+          "note": "Belum ada source data harian yang stabil"
+        },
+        {
+          "label": "Omset Harian",
+          "value": "-",
+          "note": "Menunggu strategi integrasi Shopee"
+        },
+        {
+          "label": "Top Product",
+          "value": "-",
+          "note": "Belum ada data order item"
+        },
+        {
+          "label": "Status Integrasi",
+          "value": "Pending",
+          "note": "Opsi terbaik tetap Open Platform / reauth flow"
+        }
+      ],
+      "notes": [
+        "Tetap tampil untuk menjaga slot brand di dashboard.",
+        "Nilai sengaja dikosongkan sampai pipeline Shopee diputuskan."
+      ]
+    },
+    {
+      "id": "balcos",
+      "name": "Balcos Compound",
+      "source": "Manual / Pending Source",
+      "state": "placeholder",
+      "note": "Placeholder brand mandiri tetap muncul di dashboard, terpisah dari outlet Balcos Compound milik Zona Massage.",
+      "summaryCards": [
+        {
+          "label": "Omset MTD",
+          "value": "-",
+          "note": "Belum ada source data resmi"
+        },
+        {
+          "label": "Omset Harian",
+          "value": "-",
+          "note": "Belum ada source data resmi"
+        },
+        {
+          "label": "Top Product",
+          "value": "-",
+          "note": "Belum ada data transaksi"
+        },
+        {
+          "label": "Status Integrasi",
+          "value": "Pending",
+          "note": "Menunggu sistem sumber ditentukan"
+        }
+      ],
+      "notes": [
+        "Kartu ini sengaja kosong sebagai placeholder brand tersendiri.",
+        "Jangan bingungkan dengan outlet Balcos Compound di dalam Zona Massage."
+      ]
+    }
+  ]
+}

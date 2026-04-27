@@ -1,0 +1,5 @@
+[     613ms] [LOG] loadingMessage null @ https://dashboardv2.olsera.co.id/reports/multioutlets:106
+[     891ms] [LOG] MIXPANEL PEOPLE REQUEST (QUEUED, PENDING IDENTIFY): @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[     891ms] [LOG] {$set_once: Object, $token: b92e036156852f7b44431de164e9fbeb, $distinct_id: $device:eb252063-5049-4e1c-9cee-1c15f8425085, $device_id: eb252063-5049-4e1c-9cee-1c15f8425085} @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[    1382ms] [WARNING] Hotjar not launching due to suspicious userAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/147.0.0.0 Safari/537.36 @ https://static.hotjar.com/c/hotjar-5339913.js?sv=7:2
+[   14286ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://permissions-api-dash.olsera.co.id/oauth/token:0

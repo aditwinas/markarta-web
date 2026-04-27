@@ -1,0 +1,4 @@
+[      99ms] [LOG] loadingMessage null @ https://dashboardv2.olsera.co.id/reports/multioutlets:106
+[     193ms] [LOG] MIXPANEL PEOPLE REQUEST (QUEUED, PENDING IDENTIFY): @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[     193ms] [LOG] {$set_once: Object, $token: b92e036156852f7b44431de164e9fbeb, $distinct_id: $device:82f265ee-a1cc-4dd8-8474-fb3773c9a36e, $device_id: 82f265ee-a1cc-4dd8-8474-fb3773c9a36e} @ https://dashboardv2.olsera.co.id/static/js/chunk-libs.07a6933d.js:902
+[     559ms] [ERROR] Attestation check for Attribution Reporting on https://www.facebook.com failed. @ https://dashboardv2.olsera.co.id/reports/multioutlets:0

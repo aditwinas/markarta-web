@@ -1,0 +1,4 @@
+[     773ms] [LOG] JQMIGRATE: Migrate is installed, version 3.4.1 @ https://zonaspa.id/wp-admin/load-scripts.php?c=1&load%5Bchunk_0%5D=jquery-core,jquery-migrate,utils,wp-polyfill-inert,regenerator-runtime,wp-polyfill,wp-hooks&ver=6.4.8:4
+[     880ms] TypeError: (0 , i.createSelector) is not a function
+    at https://zonaspa.id/wp-content/plugins/hostinger-ai-assistant/vendor/wordpress/abilities-api/packages/client/build/index.js?ver=a969272fbaa2f54966a9:7:6583
+    at https://zonaspa.id/wp-content/plugins/hostinger-ai-assistant/vendor/wordpress/abilities-api/packages/client/build/index.js?ver=a969272fbaa2f54966a9:7:13131

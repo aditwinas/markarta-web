@@ -1,0 +1,294 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e7]:
+        - img "Logo" [ref=e9]
+        - generic [ref=e10]:
+          - link "Kiosk" [ref=e11] [cursor=pointer]:
+            - /url: /kiosk
+            - button "Kiosk" [ref=e12]:
+              - img [ref=e14]
+              - paragraph [ref=e20]: Kiosk
+          - link "Gallery" [ref=e21] [cursor=pointer]:
+            - /url: /gallery
+            - button "Gallery" [ref=e22]:
+              - img [ref=e24]
+              - paragraph [ref=e28]: Gallery
+          - link "Statistics" [ref=e29] [cursor=pointer]:
+            - /url: /statistics
+            - button "Statistics" [ref=e30]:
+              - img [ref=e32]
+              - paragraph [ref=e35]: Statistics
+          - link "Transaction" [ref=e36] [cursor=pointer]:
+            - /url: /transactions
+            - button "Transaction" [ref=e37]:
+              - img [ref=e39]
+              - paragraph [ref=e42]: Transaction
+          - link "Frame Photo" [ref=e43] [cursor=pointer]:
+            - /url: /frame
+            - button "Frame Photo" [ref=e44]:
+              - img [ref=e46]
+              - paragraph [ref=e48]: Frame Photo
+          - link "Frame GIF" [ref=e49] [cursor=pointer]:
+            - /url: /framegif
+            - button "Frame GIF" [ref=e50]:
+              - img [ref=e52]
+              - paragraph [ref=e54]: Frame GIF
+          - link "Frame Category" [ref=e55] [cursor=pointer]:
+            - /url: /frame-category
+            - button "Frame Category" [ref=e56]:
+              - img [ref=e58]
+              - paragraph [ref=e60]: Frame Category
+          - link "Logo Soft File" [ref=e61] [cursor=pointer]:
+            - /url: /qr-digital
+            - button "Logo Soft File" [ref=e62]:
+              - img [ref=e64]
+              - paragraph [ref=e70]: Logo Soft File
+          - link "Voucher" [ref=e71] [cursor=pointer]:
+            - /url: /voucher
+            - button "Voucher" [ref=e72]:
+              - img [ref=e74]
+              - paragraph [ref=e76]: Voucher
+          - link "Payment Key" [ref=e77] [cursor=pointer]:
+            - /url: /paymentkey
+            - button "Payment Key" [ref=e78]:
+              - img [ref=e80]
+              - paragraph [ref=e83]: Payment Key
+          - link "Branch Manager" [ref=e84] [cursor=pointer]:
+            - /url: /branch
+            - button "Branch Manager" [ref=e85]:
+              - img [ref=e87]
+              - paragraph [ref=e91]: Branch Manager
+      - generic [ref=e92]:
+        - menubar [ref=e95]:
+          - menuitem "Hi, hi.snapobox" [ref=e96]:
+            - paragraph [ref=e97]: Hi, hi.snapobox
+            - button [ref=e98] [cursor=pointer]:
+              - img [ref=e99]
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: Transaction List for SOB JOGJA - COUVEE JAKAL
+            - generic [ref=e106]:
+              - button "Filter Transaksi" [ref=e107] [cursor=pointer]:
+                - img [ref=e108]
+                - text: Filter Transaksi
+              - button "Export" [ref=e111] [cursor=pointer]
+          - generic [ref=e112]:
+            - paragraph [ref=e113]: "Date: 2026-04-01 00:00:00 - 2026-04-30 23:59:59"
+            - paragraph [ref=e114]: "Gross Income: Rp 600.000"
+            - paragraph [ref=e115]: "Total Free Voucher (Print Count): 1"
+            - paragraph [ref=e116]: "Total Free Voucher (Session): 1"
+            - paragraph [ref=e117]: "Total Sessions (Total Free Voucher (Print Count) + Total Success Transactions (Print Count) ): 21"
+            - paragraph [ref=e118]: "Total Sessions (Total Free Voucher (Sessions) + Total Success Transactions (Sessions) ): 20"
+            - paragraph [ref=e119]: "Success Transactions (Print Count): 20"
+            - paragraph [ref=e120]: "Success Transactions (Session): 19"
+            - paragraph [ref=e121]: "Pending Transactions: 0"
+            - paragraph [ref=e122]: "Failed Transactions: 1"
+          - alert [ref=e123]:
+            - img [ref=e124]
+            - heading "Note" [level=5] [ref=e126]
+            - list [ref=e128]:
+              - listitem [ref=e129]: Income tercatat mulai per tanggal 27 September 2024
+              - listitem [ref=e130]: Income yang tercatat adalah Gross Income yang ditetapkan per kiosk ataupun penggunaan voucher yang statusnya berhasil
+              - listitem [ref=e131]: Untuk mendapatkan Net Income, silahkan cek biller yang digunakan
+          - generic [ref=e132]:
+            - table [ref=e134]:
+              - rowgroup [ref=e135]:
+                - row "ID Transaction ID Biller ID Waktu Waktu Settlement Status Transaksi Status Sesi Type Jumlah Print Harga Voucher Supplier" [ref=e136]:
+                  - columnheader "ID" [ref=e137]
+                  - columnheader "Transaction ID" [ref=e138]
+                  - columnheader "Biller ID" [ref=e139]
+                  - columnheader "Waktu" [ref=e140]
+                  - columnheader "Waktu Settlement" [ref=e141]
+                  - columnheader "Status Transaksi" [ref=e142]
+                  - columnheader "Status Sesi" [ref=e143]
+                  - columnheader "Type" [ref=e144]
+                  - columnheader "Jumlah Print" [ref=e145]
+                  - columnheader "Harga" [ref=e146]
+                  - columnheader "Voucher" [ref=e147]
+                  - columnheader "Supplier" [ref=e148]
+              - rowgroup [ref=e149]:
+                - row "1 - - 2026-04-20 19:49:03 - success SESSION 1 Rp 0 EROR FREE - 486907 VOUCHER" [ref=e150]:
+                  - cell "1" [ref=e151]
+                  - cell "-" [ref=e152]
+                  - cell "-" [ref=e153]
+                  - cell "2026-04-20 19:49:03" [ref=e154]
+                  - cell "-" [ref=e155]
+                  - cell "success" [ref=e156]:
+                    - paragraph [ref=e157]: success
+                  - cell [ref=e158]:
+                    - img [ref=e159]
+                  - cell "SESSION" [ref=e161]
+                  - cell "1" [ref=e162]
+                  - cell "Rp 0" [ref=e163]
+                  - cell "EROR FREE - 486907" [ref=e164]:
+                    - paragraph [ref=e165]: EROR FREE - 486907
+                  - cell "VOUCHER" [ref=e166]
+                - row "2 TJXB_95d3f60b-354f-4417-86da-1b8a0e2f6852 e20abbf5-58ab-4372-8ad3-521c787cbd69 2026-04-01 23:04:40 2026-04-01 23:05:20 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e167]:
+                  - cell "2" [ref=e168]
+                  - cell "TJXB_95d3f60b-354f-4417-86da-1b8a0e2f6852" [ref=e169]
+                  - cell "e20abbf5-58ab-4372-8ad3-521c787cbd69" [ref=e170]
+                  - cell "2026-04-01 23:04:40" [ref=e171]
+                  - cell "2026-04-01 23:05:20" [ref=e172]
+                  - cell "success" [ref=e173]:
+                    - paragraph [ref=e174]: success
+                  - cell [ref=e175]:
+                    - img [ref=e176]
+                  - cell "SESSION" [ref=e178]
+                  - cell "1" [ref=e179]
+                  - cell "Rp 30.000" [ref=e180]
+                  - cell "-" [ref=e181]:
+                    - paragraph [ref=e182]: "-"
+                  - cell "MIDTRANS" [ref=e183]
+                - row "3 TJXB_2d9bc5c8-293b-453c-a4e2-102866d347b6 7943c344-6515-4f21-89aa-6d23c3c492fe 2026-04-01 22:49:09 2026-04-01 22:49:34 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e184]:
+                  - cell "3" [ref=e185]
+                  - cell "TJXB_2d9bc5c8-293b-453c-a4e2-102866d347b6" [ref=e186]
+                  - cell "7943c344-6515-4f21-89aa-6d23c3c492fe" [ref=e187]
+                  - cell "2026-04-01 22:49:09" [ref=e188]
+                  - cell "2026-04-01 22:49:34" [ref=e189]
+                  - cell "success" [ref=e190]:
+                    - paragraph [ref=e191]: success
+                  - cell [ref=e192]:
+                    - img [ref=e193]
+                  - cell "SESSION" [ref=e195]
+                  - cell "1" [ref=e196]
+                  - cell "Rp 30.000" [ref=e197]
+                  - cell "-" [ref=e198]:
+                    - paragraph [ref=e199]: "-"
+                  - cell "MIDTRANS" [ref=e200]
+                - row "4 TJXB_4963b464-b51f-4474-a20c-3949448fefbc 80b89482-1b6a-4c03-bd4f-12d4d554d37d 2026-04-01 22:42:45 2026-04-01 22:43:02 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e201]:
+                  - cell "4" [ref=e202]
+                  - cell "TJXB_4963b464-b51f-4474-a20c-3949448fefbc" [ref=e203]
+                  - cell "80b89482-1b6a-4c03-bd4f-12d4d554d37d" [ref=e204]
+                  - cell "2026-04-01 22:42:45" [ref=e205]
+                  - cell "2026-04-01 22:43:02" [ref=e206]
+                  - cell "success" [ref=e207]:
+                    - paragraph [ref=e208]: success
+                  - cell [ref=e209]:
+                    - img [ref=e210]
+                  - cell "SESSION" [ref=e212]
+                  - cell "1" [ref=e213]
+                  - cell "Rp 30.000" [ref=e214]
+                  - cell "-" [ref=e215]:
+                    - paragraph [ref=e216]: "-"
+                  - cell "MIDTRANS" [ref=e217]
+                - row "5 TJXB_d6d6ab63-193c-4727-93dc-4c3b08b8c6ca 10f216a7-8de9-48f4-a20d-86f9d5abf327 2026-04-01 22:29:06 2026-04-01 22:29:20 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e218]:
+                  - cell "5" [ref=e219]
+                  - cell "TJXB_d6d6ab63-193c-4727-93dc-4c3b08b8c6ca" [ref=e220]
+                  - cell "10f216a7-8de9-48f4-a20d-86f9d5abf327" [ref=e221]
+                  - cell "2026-04-01 22:29:06" [ref=e222]
+                  - cell "2026-04-01 22:29:20" [ref=e223]
+                  - cell "success" [ref=e224]:
+                    - paragraph [ref=e225]: success
+                  - cell [ref=e226]:
+                    - img [ref=e227]
+                  - cell "SESSION" [ref=e229]
+                  - cell "1" [ref=e230]
+                  - cell "Rp 30.000" [ref=e231]
+                  - cell "-" [ref=e232]:
+                    - paragraph [ref=e233]: "-"
+                  - cell "MIDTRANS" [ref=e234]
+                - row "6 TJXB_8d22c402-c70e-4020-ac73-72e0d23583a1 227b3333-fab4-4286-92e0-0213dfe78d26 2026-04-01 22:23:53 2026-04-01 22:24:03 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e235]:
+                  - cell "6" [ref=e236]
+                  - cell "TJXB_8d22c402-c70e-4020-ac73-72e0d23583a1" [ref=e237]
+                  - cell "227b3333-fab4-4286-92e0-0213dfe78d26" [ref=e238]
+                  - cell "2026-04-01 22:23:53" [ref=e239]
+                  - cell "2026-04-01 22:24:03" [ref=e240]
+                  - cell "success" [ref=e241]:
+                    - paragraph [ref=e242]: success
+                  - cell [ref=e243]:
+                    - img [ref=e244]
+                  - cell "SESSION" [ref=e246]
+                  - cell "1" [ref=e247]
+                  - cell "Rp 30.000" [ref=e248]
+                  - cell "-" [ref=e249]:
+                    - paragraph [ref=e250]: "-"
+                  - cell "MIDTRANS" [ref=e251]
+                - row "7 TJXB_f5c22740-06f7-479d-b625-f43426839ddc 115fa2c7-1491-4274-aa16-9304aae0feb6 2026-04-01 22:19:56 2026-04-01 22:20:09 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e252]:
+                  - cell "7" [ref=e253]
+                  - cell "TJXB_f5c22740-06f7-479d-b625-f43426839ddc" [ref=e254]
+                  - cell "115fa2c7-1491-4274-aa16-9304aae0feb6" [ref=e255]
+                  - cell "2026-04-01 22:19:56" [ref=e256]
+                  - cell "2026-04-01 22:20:09" [ref=e257]
+                  - cell "success" [ref=e258]:
+                    - paragraph [ref=e259]: success
+                  - cell [ref=e260]:
+                    - img [ref=e261]
+                  - cell "SESSION" [ref=e263]
+                  - cell "1" [ref=e264]
+                  - cell "Rp 30.000" [ref=e265]
+                  - cell "-" [ref=e266]:
+                    - paragraph [ref=e267]: "-"
+                  - cell "MIDTRANS" [ref=e268]
+                - row "8 TJXB_bc260b86-fa60-4dfe-a729-6c08734e0fd3 3231ba6c-1551-44ec-bea0-7174c8721328 2026-04-01 22:11:36 2026-04-01 22:11:53 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e269]:
+                  - cell "8" [ref=e270]
+                  - cell "TJXB_bc260b86-fa60-4dfe-a729-6c08734e0fd3" [ref=e271]
+                  - cell "3231ba6c-1551-44ec-bea0-7174c8721328" [ref=e272]
+                  - cell "2026-04-01 22:11:36" [ref=e273]
+                  - cell "2026-04-01 22:11:53" [ref=e274]
+                  - cell "success" [ref=e275]:
+                    - paragraph [ref=e276]: success
+                  - cell [ref=e277]:
+                    - img [ref=e278]
+                  - cell "SESSION" [ref=e280]
+                  - cell "1" [ref=e281]
+                  - cell "Rp 30.000" [ref=e282]
+                  - cell "-" [ref=e283]:
+                    - paragraph [ref=e284]: "-"
+                  - cell "MIDTRANS" [ref=e285]
+                - row "9 TJXB_5ff34927-b384-4e22-b053-826ddd049a7b 38c34c34-69b4-45fd-985b-cc9d8d16b0ca 2026-04-01 22:05:49 2026-04-01 22:05:58 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e286]:
+                  - cell "9" [ref=e287]
+                  - cell "TJXB_5ff34927-b384-4e22-b053-826ddd049a7b" [ref=e288]
+                  - cell "38c34c34-69b4-45fd-985b-cc9d8d16b0ca" [ref=e289]
+                  - cell "2026-04-01 22:05:49" [ref=e290]
+                  - cell "2026-04-01 22:05:58" [ref=e291]
+                  - cell "success" [ref=e292]:
+                    - paragraph [ref=e293]: success
+                  - cell [ref=e294]:
+                    - img [ref=e295]
+                  - cell "SESSION" [ref=e297]
+                  - cell "1" [ref=e298]
+                  - cell "Rp 30.000" [ref=e299]
+                  - cell "-" [ref=e300]:
+                    - paragraph [ref=e301]: "-"
+                  - cell "MIDTRANS" [ref=e302]
+                - row "10 TJXB_2353b0cf-2d6b-4ac7-a338-c96ee4bf9b86 9b965e8b-aee8-4c35-b21e-a311c1692b86 2026-04-01 21:48:39 2026-04-01 21:48:48 success SESSION 1 Rp 30.000 - MIDTRANS" [ref=e303]:
+                  - cell "10" [ref=e304]
+                  - cell "TJXB_2353b0cf-2d6b-4ac7-a338-c96ee4bf9b86" [ref=e305]
+                  - cell "9b965e8b-aee8-4c35-b21e-a311c1692b86" [ref=e306]
+                  - cell "2026-04-01 21:48:39" [ref=e307]
+                  - cell "2026-04-01 21:48:48" [ref=e308]
+                  - cell "success" [ref=e309]:
+                    - paragraph [ref=e310]: success
+                  - cell [ref=e311]:
+                    - img [ref=e312]
+                  - cell "SESSION" [ref=e314]
+                  - cell "1" [ref=e315]
+                  - cell "Rp 30.000" [ref=e316]
+                  - cell "-" [ref=e317]:
+                    - paragraph [ref=e318]: "-"
+                  - cell "MIDTRANS" [ref=e319]
+            - generic [ref=e320]:
+              - paragraph [ref=e321]: 1 - 10 dari 22 data
+              - navigation "pagination" [ref=e322]:
+                - list [ref=e323]:
+                  - listitem [ref=e324]:
+                    - generic "Go to previous page" [ref=e325]:
+                      - img [ref=e326]
+                      - generic [ref=e328]: Previous
+                  - listitem [ref=e329]:
+                    - generic [ref=e330]: "1"
+                  - listitem [ref=e331]:
+                    - generic [ref=e332]: "2"
+                  - listitem [ref=e333]:
+                    - generic [ref=e334]: "3"
+                  - listitem [ref=e335]:
+                    - generic "Go to next page" [ref=e336]:
+                      - generic [ref=e337]: Next
+                      - img [ref=e338]
+    - generic [ref=e341]:
+      - heading "header" [level=2] [ref=e342]
+      - paragraph [ref=e343]: header
+  - region "Notifications (F8)":
+    - list
+  - alert [ref=e2]
