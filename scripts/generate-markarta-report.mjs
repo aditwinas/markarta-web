@@ -228,7 +228,7 @@ function getReportBasisDates() {
   const previousDay = addDays(closedDay, -1);
   const monthlyCurrentStart = startOfMonth(closedDay);
   const monthlyPreviousStart = startOfMonth(addMonths(monthlyCurrentStart, -1));
-  const monthlyPreviousEnd = clampDay(addMonths(closedDay, -1), closedDay.getDate());
+  const monthlyPreviousEnd = clampDay(addMonths(closedDay, -1), closedDay.getUTCDate());
 
   return {
     nowJakarta,
@@ -252,28 +252,30 @@ function getJakartaDate(date = new Date()) {
   const month = parts.find((part) => part.type === "month")?.value;
   const day = parts.find((part) => part.type === "day")?.value;
 
-  return new Date(`${year}-${month}-${day}T00:00:00${JAKARTA_OFFSET}`);
+  return createBusinessDate(Number(year), Number(month), Number(day));
 }
 
 function addDays(date, days) {
   const next = new Date(date);
-  next.setDate(next.getDate() + days);
+  next.setUTCDate(next.getUTCDate() + days);
   return next;
 }
 
 function addMonths(date, months) {
-  const year = date.getFullYear();
-  const monthIndex = date.getMonth();
-  return new Date(Date.UTC(year, monthIndex + months, 1, 0, 0, 0) + 7 * 60 * 60 * 1000);
+  return createBusinessDate(date.getUTCFullYear(), date.getUTCMonth() + 1 + months, 1);
 }
 
 function startOfMonth(date) {
-  return new Date(`${date.getFullYear()}-${pad2(date.getMonth() + 1)}-01T00:00:00${JAKARTA_OFFSET}`);
+  return createBusinessDate(date.getUTCFullYear(), date.getUTCMonth() + 1, 1);
 }
 
 function clampDay(monthDate, targetDay) {
-  const lastDay = new Date(monthDate.getFullYear(), monthDate.getMonth() + 1, 0).getDate();
-  return new Date(`${monthDate.getFullYear()}-${pad2(monthDate.getMonth() + 1)}-${pad2(Math.min(targetDay, lastDay))}T00:00:00${JAKARTA_OFFSET}`);
+  const lastDay = new Date(Date.UTC(monthDate.getUTCFullYear(), monthDate.getUTCMonth() + 1, 0)).getUTCDate();
+  return createBusinessDate(monthDate.getUTCFullYear(), monthDate.getUTCMonth() + 1, Math.min(targetDay, lastDay));
+}
+
+function createBusinessDate(year, month, day) {
+  return new Date(Date.UTC(year, month - 1, day));
 }
 
 function pad2(value) {
@@ -281,11 +283,11 @@ function pad2(value) {
 }
 
 function formatDateForApi(date) {
-  return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}-${pad2(date.getDate())}`;
+  return `${date.getUTCFullYear()}-${pad2(date.getUTCMonth() + 1)}-${pad2(date.getUTCDate())}`;
 }
 
 function formatDateForHumans(date) {
-  return `${date.getDate()} ${monthName(date.getMonth())} ${date.getFullYear()}`;
+  return `${date.getUTCDate()} ${monthName(date.getUTCMonth())} ${date.getUTCFullYear()}`;
 }
 
 function formatDateTimeForHumans(date) {
@@ -1310,9 +1312,9 @@ function filterRowsByExactDate(rows, date) {
 
 function sameDate(left, right) {
   return (
-    left.getFullYear() === right.getFullYear() &&
-    left.getMonth() === right.getMonth() &&
-    left.getDate() === right.getDate()
+    left.getUTCFullYear() === right.getUTCFullYear() &&
+    left.getUTCMonth() === right.getUTCMonth() &&
+    left.getUTCDate() === right.getUTCDate()
   );
 }
 
@@ -1734,7 +1736,7 @@ function parseNumber(value) {
 }
 
 function formatDateForShortColumn(date) {
-  return `${date.getDate()} ${monthName(date.getMonth()).slice(0, 3)}`;
+  return `${date.getUTCDate()} ${monthName(date.getUTCMonth()).slice(0, 3)}`;
 }
 
 async function mapWithConcurrency(items, concurrency, worker) {
