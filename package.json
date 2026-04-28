@@ -7,7 +7,7 @@
     "refresh:report": "node scripts/generate-markarta-report.mjs",
     "build": "next build",
     "build:report": "npm run refresh:report && npm run build",
-    "deploy:prod": "npm run build:report && npx netlify deploy --prod --dir=out",
+    "deploy:prod": "npx vercel --prod",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },

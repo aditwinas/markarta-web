@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import crypto from "node:crypto";
 import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -70,6 +71,9 @@ async function main() {
     runBrandTask("zona", () => buildZonaSection(basisDates)),
     runBrandTask("snaposnap", () => buildSnapOSnapSection(basisDates))
   ];
+  if (hasShopeeConfig()) {
+    tasks.push(runBrandTask("tunas", () => buildTunasMekarDentalSection(basisDates)));
+  }
 
   const settled = await Promise.allSettled(tasks);
   const liveResults = [];
@@ -87,10 +91,10 @@ async function main() {
       throw item.reason;
     }
 
-    const fallbackNotes = [...(fallbackSection.notes ?? [])];
-    const fallbackBasis = previousPayload?.reportBasis
-      ? `${previousPayload.reportBasis.dailyCurrent} vs ${previousPayload.reportBasis.dailyPrevious}`
-      : null;
+    const fallbackNotes = (fallbackSection.notes ?? []).filter(
+      (note) => !note.startsWith("Basis data fallback") && !note.startsWith("Refresh otomatis gagal"),
+    );
+    const fallbackBasis = describeSectionDailyBasis(fallbackSection);
     fallbackNotes.unshift(
       `Refresh otomatis gagal pada ${formatDateTimeForHumans(new Date())}; dashboard mempertahankan snapshot terakhir yang valid untuk ${fallbackSection.name}.`
     );
@@ -112,9 +116,9 @@ async function main() {
   }
 
   const liveSectionsById = new Map(liveResults.map((item) => [item.brandId, item]));
-  const placeholders = buildPlaceholderSections();
+  const placeholders = buildPlaceholderSections([...liveSectionsById.keys()]);
 
-  const orderedLiveIds = ["sebelas", "snapobox", "zona", "snaposnap"];
+  const orderedLiveIds = ["sebelas", "snapobox", "zona", "snaposnap", "tunas"];
   const brandReports = [
     ...orderedLiveIds.map((id) => liveSectionsById.get(id)?.section).filter(Boolean),
     ...placeholders
@@ -164,6 +168,11 @@ async function main() {
       console.log(`[markarta-report] Fallback ${warning}`);
     }
   }
+}
+
+function describeSectionDailyBasis(section) {
+  const dailyCard = section.summaryCards?.find((item) => item.label.includes("Omset Harian"));
+  return dailyCard?.note ?? null;
 }
 
 async function runBrandTask(brandId, task) {
@@ -377,23 +386,12 @@ function deriveMetricsFromSection(section) {
 }
 
 async function buildSebelasCoffeeSection(basisDates) {
-  const contextPath = process.env.OLSERA_CONTEXT_PATH;
-  if (!contextPath) {
-    throw Object.assign(new Error("OLSERA_CONTEXT_PATH belum diisi."), { brandId: "sebelas" });
-  }
+  const olseraSource = await resolveOlseraCredentials();
 
-  const context = JSON.parse(await fs.readFile(contextPath, "utf8"));
-  const accessToken = context?.token?.access_token;
-  const urlId = context?.store?.url_id;
-
-  if (!accessToken || !urlId) {
-    throw Object.assign(new Error("Context Olsera tidak lengkap."), { brandId: "sebelas" });
-  }
-
-  const currentRows = await fetchOlseraSalesSummary(urlId, accessToken, basisDates.monthlyCurrentStart, basisDates.closedDay);
-  const previousRows = await fetchOlseraSalesSummary(urlId, accessToken, basisDates.monthlyPreviousStart, basisDates.monthlyPreviousEnd);
-  const dailyRows = await fetchOlseraSalesSummary(urlId, accessToken, basisDates.closedDay, basisDates.closedDay);
-  const previousDailyRows = await fetchOlseraSalesSummary(urlId, accessToken, basisDates.previousDay, basisDates.previousDay);
+  const currentRows = await fetchOlseraSalesSummaryForSource(olseraSource, basisDates.monthlyCurrentStart, basisDates.closedDay);
+  const previousRows = await fetchOlseraSalesSummaryForSource(olseraSource, basisDates.monthlyPreviousStart, basisDates.monthlyPreviousEnd);
+  const dailyRows = await fetchOlseraSalesSummaryForSource(olseraSource, basisDates.closedDay, basisDates.closedDay);
+  const previousDailyRows = await fetchOlseraSalesSummaryForSource(olseraSource, basisDates.previousDay, basisDates.previousDay);
 
   const previousByStore = new Map(previousRows.map((row) => [row.store_id, row]));
   const dailyByStore = new Map(dailyRows.map((row) => [row.store_id, row]));
@@ -491,7 +489,149 @@ async function buildSebelasCoffeeSection(basisDates) {
   };
 }
 
-async function fetchOlseraSalesSummary(urlId, accessToken, fromDate, toDate) {
+async function resolveOlseraCredentials() {
+  const accessToken = process.env.OLSERA_ACCESS_TOKEN;
+  const urlId = process.env.OLSERA_STORE_URL_ID;
+
+  if (accessToken && urlId) {
+    return { accessToken, urlId };
+  }
+
+  const dashboardEmail = process.env.OLSERA_DASH_EMAIL;
+  const dashboardPassword = process.env.OLSERA_DASH_PASSWORD;
+  if (dashboardEmail && dashboardPassword) {
+    return loginOlseraDashboard(dashboardEmail, dashboardPassword);
+  }
+
+  const inlineContext = readOlseraInlineContext();
+  if (inlineContext) {
+    return extractOlseraCredentials(inlineContext);
+  }
+
+  const contextPath = process.env.OLSERA_CONTEXT_PATH;
+  if (contextPath) {
+    try {
+      const context = JSON.parse(await fs.readFile(contextPath, "utf8"));
+      return extractOlseraCredentials(context);
+    } catch (error) {
+      if (error.code === "ENOENT") {
+        throw Object.assign(
+          new Error(
+            `Context Olsera tidak ditemukan di ${contextPath}. Isi OLSERA_ACCESS_TOKEN dan OLSERA_STORE_URL_ID untuk automation permanen.`,
+          ),
+          { brandId: "sebelas" },
+        );
+      }
+      throw error;
+    }
+  }
+
+  throw Object.assign(
+    new Error("Credential Olsera belum diisi. Set OLSERA_ACCESS_TOKEN + OLSERA_STORE_URL_ID, atau OLSERA_CONTEXT_JSON/OLSERA_CONTEXT_BASE64."),
+    { brandId: "sebelas" },
+  );
+}
+
+function readOlseraInlineContext() {
+  if (process.env.OLSERA_CONTEXT_JSON) {
+    return JSON.parse(process.env.OLSERA_CONTEXT_JSON);
+  }
+
+  if (process.env.OLSERA_CONTEXT_BASE64) {
+    return JSON.parse(Buffer.from(process.env.OLSERA_CONTEXT_BASE64, "base64").toString("utf8"));
+  }
+
+  return null;
+}
+
+function extractOlseraCredentials(context) {
+  const accessToken = context?.token?.access_token ?? context?.access_token;
+  const urlId = context?.store?.url_id ?? context?.url_id ?? context?.store_url_id;
+  const urlIds = extractOlseraUrlIds(context);
+
+  if (!accessToken || (!urlId && !urlIds.length)) {
+    throw Object.assign(new Error("Credential Olsera tidak lengkap: butuh access token dan store url_id / daftar stores."), { brandId: "sebelas" });
+  }
+
+  return urlIds.length ? { accessToken, urlIds } : { accessToken, urlId };
+}
+
+function extractOlseraUrlIds(context) {
+  const stores = context?.stores ?? context?.userStores ?? context?.data?.stores ?? [];
+  return stores
+    .map((store) => store?.url_id)
+    .filter((item) => item && item !== "warehousesebelascoffee");
+}
+
+async function loginOlseraDashboard(email, password) {
+  const response = await fetch("https://api-dash.olsera.co.id/oauth/token", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      accept: "application/json",
+      device: "123123123"
+    },
+    body: JSON.stringify({
+      username: email,
+      password,
+      client_id: 2,
+      client_secret: "0XqbhEW6E72GNHn0iIM7Ui1GgB8jny91wYnXAIb8",
+      grant_type: "password"
+    })
+  });
+
+  const token = await response.json().catch(() => ({}));
+  if (!response.ok || !token.access_token) {
+    throw Object.assign(new Error(`Login dashboard Olsera gagal (${response.status}).`), { brandId: "sebelas" });
+  }
+
+  const stores = await fetchOlseraDashboardStores(token.access_token);
+  return {
+    accessToken: token.access_token,
+    urlIds: stores.map((store) => store.url_id).filter((item) => item && item !== "warehousesebelascoffee")
+  };
+}
+
+async function fetchOlseraDashboardStores(accessToken) {
+  const url = new URL("https://api-dash.olsera.co.id/api/store");
+  url.searchParams.set("per_page", "50");
+  url.searchParams.set("page", "1");
+  url.searchParams.append("sort_type[]", "desc");
+  url.searchParams.append("sort_type[]", "desc");
+  url.searchParams.append("sort_column[]", "is_store_active");
+  url.searchParams.append("sort_column[]", "created_time");
+
+  const response = await fetch(url, {
+    headers: {
+      authorization: `Bearer ${accessToken}`,
+      accept: "application/json"
+    }
+  });
+
+  const json = await response.json().catch(() => ({}));
+  if (!response.ok || !Array.isArray(json.data)) {
+    throw Object.assign(new Error(`Daftar outlet Olsera gagal diambil (${response.status}).`), { brandId: "sebelas" });
+  }
+
+  return json.data.filter((store) => store.is_store_active);
+}
+
+async function fetchOlseraSalesSummaryForSource(source, fromDate, toDate) {
+  if (source.urlIds?.length) {
+    const uniqueRows = new Map();
+    for (const urlId of source.urlIds) {
+      const rows = await fetchOlseraSalesSummary(urlId, source.accessToken, fromDate, toDate, { allowNotFound: true });
+      for (const row of rows) {
+        uniqueRows.set(row.store_id ?? row.store_name, row);
+      }
+    }
+    return [...uniqueRows.values()];
+  }
+
+  return fetchOlseraSalesSummary(source.urlId, source.accessToken, fromDate, toDate);
+}
+
+async function fetchOlseraSalesSummary(urlId, accessToken, fromDate, toDate, options = {}) {
   const url = new URL(`https://permissions-api-dash.olsera.co.id/api/${urlId}/admin/v1/id/multioutletreports/salessummary`);
   url.searchParams.set("from", formatDateForApi(fromDate));
   url.searchParams.set("to", formatDateForApi(toDate));
@@ -503,6 +643,10 @@ async function fetchOlseraSalesSummary(urlId, accessToken, fromDate, toDate) {
       accept: "application/json"
     }
   });
+
+  if (response.status === 404 && options.allowNotFound) {
+    return [];
+  }
 
   if (!response.ok) {
     throw new Error(`Olsera summary gagal (${response.status})`);
@@ -792,14 +936,16 @@ async function buildZonaSection(basisDates) {
           { key: "mtd", label: "Omset MTD", align: "right" },
           { key: "mtdChange", label: "Vs Bulan Lalu", align: "right" },
           { key: "appointments", label: "Appointment", align: "right" },
-          { key: "daily", label: formatDateForShortColumn(basisDates.closedDay), align: "right" }
+          { key: "daily", label: formatDateForShortColumn(basisDates.closedDay), align: "right" },
+          { key: "dailyChange", label: `Vs ${formatDateForShortColumn(basisDates.previousDay)}`, align: "right" }
         ],
         rows: outlets.map((row) => ({
           outlet: row.outlet,
           mtd: formatCurrency(row.monthlyCurrent),
           mtdChange: formatSignedPct(computePct(row.monthlyCurrent, row.monthlyPrevious), 0),
           appointments: formatCount(row.appointmentsCurrent),
-          daily: formatCurrency(row.dailyCurrent)
+          daily: formatCurrency(row.dailyCurrent),
+          dailyChange: formatSignedPct(computePct(row.dailyCurrent, row.dailyPrevious), 1)
         }))
       },
       rankings: [STATIC_ZONA_RANKING],
@@ -1192,23 +1338,372 @@ function buildCategoryRanking(rows, key) {
     .slice(0, 3);
 }
 
-function buildPlaceholderSections() {
+function hasShopeeConfig() {
+  return Boolean(
+    process.env.SHOPEE_PARTNER_ID &&
+      process.env.SHOPEE_PARTNER_KEY &&
+      process.env.SHOPEE_SHOP_ID &&
+      (process.env.SHOPEE_REFRESH_TOKEN || process.env.SHOPEE_ACCESS_TOKEN)
+  );
+}
+
+async function buildTunasMekarDentalSection(basisDates) {
+  const client = createShopeeClient();
+  const monthlyCurrentOrders = await fetchShopeeOrdersForRange(client, basisDates.monthlyCurrentStart, basisDates.closedDay);
+  const monthlyPreviousOrders = await fetchShopeeOrdersForRange(client, basisDates.monthlyPreviousStart, basisDates.monthlyPreviousEnd);
+  const dailyCurrentOrders = filterShopeeOrdersByLocalDate(monthlyCurrentOrders, basisDates.closedDay);
+  const dailyPreviousOrders = await fetchShopeeOrdersForRange(client, basisDates.previousDay, basisDates.previousDay);
+
+  const monthlyCurrent = sumShopeeOrderRevenue(monthlyCurrentOrders);
+  const monthlyPrevious = sumShopeeOrderRevenue(monthlyPreviousOrders);
+  const dailyCurrent = sumShopeeOrderRevenue(dailyCurrentOrders);
+  const dailyPrevious = sumShopeeOrderRevenue(dailyPreviousOrders);
+  const topProducts = buildShopeeProductRanking(monthlyCurrentOrders);
+  const statusRanking = buildShopeeStatusRanking(monthlyCurrentOrders);
+
+  return {
+    brandId: "tunas",
+    section: {
+      id: "tunas",
+      name: "Tunas Mekar Dental",
+      source: "Shopee Open Platform",
+      state: "live",
+      note: "Data otomatis ditarik dari Shopee Open Platform berdasarkan order toko Tunas Mekar Dental.",
+      summaryCards: [
+        {
+          label: "Omset MTD",
+          value: formatCurrency(monthlyCurrent),
+          note: "Order Shopee valid bulan berjalan",
+          changePct: computePct(monthlyCurrent, monthlyPrevious)
+        },
+        {
+          label: "Omset Harian",
+          value: formatCurrency(dailyCurrent),
+          note: `${formatDateForHumans(basisDates.closedDay)} vs ${formatDateForHumans(basisDates.previousDay)}`,
+          changePct: computePct(dailyCurrent, dailyPrevious)
+        },
+        {
+          label: "Top Product",
+          value: topProducts[0]?.name ?? "-",
+          note: `${topProducts[0]?.value ?? "0 item"} • ${topProducts[0]?.detail ?? "Rp0"}`
+        },
+        {
+          label: "Order MTD",
+          value: `${formatCount(monthlyCurrentOrders.length)} order`,
+          note: "Tidak termasuk UNPAID dan CANCELLED"
+        }
+      ],
+      table: {
+        title: "Ringkasan Shopee",
+        description: "Omset dan order Tunas Mekar Dental dari order valid Shopee.",
+        columns: [
+          { key: "period", label: "Periode" },
+          { key: "revenue", label: "Omset", align: "right" },
+          { key: "orders", label: "Order", align: "right" },
+          { key: "change", label: "Perubahan", align: "right" }
+        ],
+        rows: [
+          {
+            period: formatRangeLabel(basisDates.monthlyCurrentStart, basisDates.closedDay),
+            revenue: formatCurrency(monthlyCurrent),
+            orders: formatCount(monthlyCurrentOrders.length),
+            change: formatSignedPct(computePct(monthlyCurrent, monthlyPrevious))
+          },
+          {
+            period: formatDateForHumans(basisDates.closedDay),
+            revenue: formatCurrency(dailyCurrent),
+            orders: formatCount(dailyCurrentOrders.length),
+            change: formatSignedPct(computePct(dailyCurrent, dailyPrevious))
+          }
+        ]
+      },
+      rankings: [
+        {
+          title: "Top produk Shopee",
+          description: "Ranking produk berdasarkan jumlah item terjual bulan berjalan.",
+          items: topProducts
+        },
+        {
+          title: "Status order",
+          description: "Distribusi order valid bulan berjalan.",
+          items: statusRanking
+        }
+      ],
+      notes: [
+        "Omset memakai total_amount dari order detail Shopee dan mengecualikan UNPAID/CANCELLED.",
+        "Refresh token dipakai untuk mengambil access token baru saat automation berjalan.",
+        "Jika token Shopee dicabut atau kedaluwarsa permanen, dashboard mempertahankan snapshot valid terakhir."
+      ]
+    },
+    metrics: {
+      monthlyCurrent,
+      monthlyPrevious,
+      dailyCurrent,
+      dailyPrevious
+    }
+  };
+}
+
+function createShopeeClient() {
+  const partnerId = process.env.SHOPEE_PARTNER_ID;
+  const partnerKey = process.env.SHOPEE_PARTNER_KEY;
+  const shopId = process.env.SHOPEE_SHOP_ID;
+  const host = process.env.SHOPEE_API_HOST || "https://partner.shopeemobile.com";
+
+  if (!partnerId || !partnerKey || !shopId) {
+    throw Object.assign(new Error("Credential Shopee belum lengkap: butuh SHOPEE_PARTNER_ID, SHOPEE_PARTNER_KEY, dan SHOPEE_SHOP_ID."), {
+      brandId: "tunas"
+    });
+  }
+
+  return {
+    partnerId,
+    partnerKey,
+    shopId,
+    host,
+    accessToken: process.env.SHOPEE_ACCESS_TOKEN || "",
+    refreshToken: process.env.SHOPEE_REFRESH_TOKEN || ""
+  };
+}
+
+async function ensureShopeeAccessToken(client) {
+  if (client.refreshToken) {
+    const pathName = "/api/v2/auth/access_token/get";
+    const response = await shopeeFetch(client, pathName, {
+      method: "POST",
+      body: {
+        partner_id: Number(client.partnerId),
+        shop_id: Number(client.shopId),
+        refresh_token: client.refreshToken
+      },
+      includeShopAuth: false
+    });
+    client.accessToken = response.access_token;
+    client.refreshToken = response.refresh_token ?? client.refreshToken;
+  }
+
+  if (!client.accessToken) {
+    throw Object.assign(new Error("SHOPEE_ACCESS_TOKEN belum ada dan refresh token tidak tersedia."), { brandId: "tunas" });
+  }
+}
+
+async function fetchShopeeOrdersForRange(client, startDate, endDate) {
+  await ensureShopeeAccessToken(client);
+  const chunks = splitDateRangeByDays(startDate, endDate, 14);
+  const orderMap = new Map();
+
+  for (const [chunkStart, chunkEnd] of chunks) {
+    const orderSnList = await fetchShopeeOrderSnList(client, chunkStart, chunkEnd);
+    for (const batch of chunkArray(orderSnList, 50)) {
+      const orders = await fetchShopeeOrderDetails(client, batch);
+      for (const order of orders) {
+        if (!isValidShopeeRevenueOrder(order)) continue;
+        orderMap.set(order.order_sn, order);
+      }
+    }
+  }
+
+  return [...orderMap.values()];
+}
+
+async function fetchShopeeOrderSnList(client, startDate, endDate) {
+  const orderSnList = [];
+  let cursor = "";
+
+  do {
+    const params = {
+      time_range_field: "create_time",
+      time_from: toShopeeTimestamp(startDate, false),
+      time_to: toShopeeTimestamp(endDate, true),
+      page_size: "100"
+    };
+    if (cursor) params.cursor = cursor;
+
+    const response = await shopeeFetch(client, "/api/v2/order/get_order_list", {
+      query: params,
+      includeShopAuth: true
+    });
+
+    orderSnList.push(...(response.response?.order_list ?? []).map((item) => item.order_sn).filter(Boolean));
+    cursor = response.response?.next_cursor || "";
+    if (!response.response?.more) break;
+  } while (cursor);
+
+  return orderSnList;
+}
+
+async function fetchShopeeOrderDetails(client, orderSnList) {
+  if (!orderSnList.length) return [];
+  const response = await shopeeFetch(client, "/api/v2/order/get_order_detail", {
+    query: {
+      order_sn_list: orderSnList.join(","),
+      response_optional_fields: [
+        "total_amount",
+        "order_status",
+        "create_time",
+        "pay_time",
+        "item_list",
+        "buyer_user_id",
+        "actual_shipping_fee"
+      ].join(",")
+    },
+    includeShopAuth: true
+  });
+
+  return response.response?.order_list ?? [];
+}
+
+async function shopeeFetch(client, pathName, options = {}) {
+  const timestamp = Math.floor(Date.now() / 1000);
+  const url = new URL(`${client.host}${pathName}`);
+  url.searchParams.set("partner_id", client.partnerId);
+  url.searchParams.set("timestamp", String(timestamp));
+
+  const includeShopAuth = options.includeShopAuth ?? false;
+  if (includeShopAuth) {
+    url.searchParams.set("shop_id", client.shopId);
+    url.searchParams.set("access_token", client.accessToken);
+  }
+
+  for (const [key, value] of Object.entries(options.query ?? {})) {
+    url.searchParams.set(key, String(value));
+  }
+
+  url.searchParams.set("sign", signShopeeRequest(client, pathName, timestamp, includeShopAuth));
+
+  const init = {
+    method: options.method ?? "GET",
+    headers: {
+      accept: "application/json"
+    }
+  };
+
+  if (options.body) {
+    init.headers["content-type"] = "application/json";
+    init.body = JSON.stringify(options.body);
+  }
+
+  const response = await fetch(url, init);
+  const json = await response.json().catch(() => ({}));
+  if (!response.ok || json.error) {
+    const message = json.message || json.error || `HTTP ${response.status}`;
+    throw Object.assign(new Error(`Shopee API gagal di ${pathName}: ${message}`), { brandId: "tunas" });
+  }
+
+  return json;
+}
+
+function signShopeeRequest(client, pathName, timestamp, includeShopAuth) {
+  const base = includeShopAuth
+    ? `${client.partnerId}${pathName}${timestamp}${client.accessToken}${client.shopId}`
+    : `${client.partnerId}${pathName}${timestamp}`;
+  return crypto.createHmac("sha256", client.partnerKey).update(base).digest("hex");
+}
+
+function splitDateRangeByDays(startDate, endDate, maxDays) {
+  const ranges = [];
+  let cursor = new Date(startDate);
+  while (cursor <= endDate) {
+    const chunkStart = new Date(cursor);
+    const chunkEnd = new Date(Math.min(addDays(chunkStart, maxDays).getTime(), endDate.getTime()));
+    ranges.push([chunkStart, chunkEnd]);
+    cursor = addDays(chunkEnd, 1);
+  }
+  return ranges;
+}
+
+function toShopeeTimestamp(date, endOfDay) {
+  const suffix = endOfDay ? "23:59:59" : "00:00:00";
+  return Math.floor(new Date(`${formatDateForApi(date)}T${suffix}${JAKARTA_OFFSET}`).getTime() / 1000);
+}
+
+function filterShopeeOrdersByLocalDate(orders, date) {
+  return orders.filter((order) => sameDate(getJakartaDate(new Date((order.create_time ?? 0) * 1000)), date));
+}
+
+function isValidShopeeRevenueOrder(order) {
+  return !["UNPAID", "CANCELLED", "IN_CANCEL"].includes(String(order.order_status ?? "").toUpperCase());
+}
+
+function sumShopeeOrderRevenue(orders) {
+  return sum(orders.map((order) => parseNumber(order.total_amount)));
+}
+
+function buildShopeeProductRanking(orders) {
+  const map = new Map();
+  for (const order of orders) {
+    for (const item of order.item_list ?? []) {
+      const name = [item.item_name, item.model_name].filter(Boolean).join(" - ") || "Produk tanpa nama";
+      const quantity = parseNumber(item.model_quantity_purchased ?? item.quantity_purchased ?? 0);
+      const price = parseNumber(item.model_discounted_price ?? item.model_original_price ?? 0);
+      const bucket = map.get(name) ?? { quantity: 0, revenue: 0 };
+      bucket.quantity += quantity;
+      bucket.revenue += price * quantity;
+      map.set(name, bucket);
+    }
+  }
+
+  return [...map.entries()]
+    .map(([name, stats]) => ({
+      name,
+      value: `${formatCount(stats.quantity)} item`,
+      detail: formatCurrency(stats.revenue),
+      quantity: stats.quantity,
+      revenue: stats.revenue
+    }))
+    .sort((left, right) => right.quantity - left.quantity || right.revenue - left.revenue)
+    .slice(0, 5)
+    .map(({ quantity, revenue, ...item }) => item);
+}
+
+function buildShopeeStatusRanking(orders) {
+  const map = new Map();
+  for (const order of orders) {
+    const status = String(order.order_status ?? "UNKNOWN");
+    const bucket = map.get(status) ?? { count: 0, revenue: 0 };
+    bucket.count += 1;
+    bucket.revenue += parseNumber(order.total_amount);
+    map.set(status, bucket);
+  }
+
+  return [...map.entries()]
+    .map(([name, stats]) => ({
+      name,
+      value: `${formatCount(stats.count)} order`,
+      detail: formatCurrency(stats.revenue),
+      count: stats.count,
+      revenue: stats.revenue
+    }))
+    .sort((left, right) => right.count - left.count || right.revenue - left.revenue)
+    .map(({ count, revenue, ...item }) => item);
+}
+
+function chunkArray(items, size) {
+  const chunks = [];
+  for (let index = 0; index < items.length; index += size) {
+    chunks.push(items.slice(index, index + size));
+  }
+  return chunks;
+}
+
+function buildPlaceholderSections(activeIds = []) {
+  const activeIdSet = new Set(activeIds);
   return [
     {
       id: "tunas",
       name: "Tunas Mekar Dental",
       source: "Shopee Seller",
       state: "placeholder",
-      note: "Placeholder tetap ditampilkan, menunggu integrasi data resmi dari Shopee.",
+      note: "Placeholder tetap ditampilkan sampai credential Shopee Open Platform dimasukkan ke automation.",
       summaryCards: [
-        { label: "Omset MTD", value: "-", note: "Belum ada source data harian yang stabil" },
-        { label: "Omset Harian", value: "-", note: "Menunggu strategi integrasi Shopee" },
+        { label: "Omset MTD", value: "-", note: "Menunggu partner_id, partner_key, shop_id, dan token" },
+        { label: "Omset Harian", value: "-", note: "Siap otomatis setelah Open Platform aktif" },
         { label: "Top Product", value: "-", note: "Belum ada data order item" },
-        { label: "Status Integrasi", value: "Pending", note: "Opsi terbaik tetap Open Platform / reauth flow" }
+        { label: "Status Integrasi", value: "Pending", note: "Kode pipeline Shopee sudah disiapkan" }
       ],
       notes: [
         "Tetap tampil untuk menjaga slot brand di dashboard.",
-        "Nilai sengaja dikosongkan sampai pipeline Shopee diputuskan."
+        "Automation akan membaca order list dan order detail dari Shopee Open Platform setelah credential API tersedia."
       ]
     },
     {
@@ -1228,7 +1723,7 @@ function buildPlaceholderSections() {
         "Jangan bingungkan dengan outlet Balcos Compound di dalam Zona Massage."
       ]
     }
-  ];
+  ].filter((section) => !activeIdSet.has(section.id));
 }
 
 function parseNumber(value) {

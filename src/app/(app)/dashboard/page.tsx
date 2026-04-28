@@ -244,7 +244,7 @@ function DashboardPageContent() {
             <AutomationCard
               icon={<DatabaseZap className="h-5 w-5 text-markarta-blue" />}
               title="03.00 refresh website"
-              note="Tarik data POS, bangun ulang static site, lalu deploy ke domain utama Netlify."
+              note="Tarik data POS, bangun ulang static site, lalu deploy ke domain utama Vercel."
             />
             <AutomationCard
               icon={<Mail className="h-5 w-5 text-markarta-blue" />}
