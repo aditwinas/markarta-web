@@ -52,6 +52,13 @@ const SNAPOSNAP_SHEETS = [
   { key: "SEMARANG", sheetName: "OVERVIEW-SEMARANG" }
 ];
 
+const TMD_SHEET_DEFAULTS = {
+  spreadsheetId: "1JpzgnpCSi_I2XaHl35KD12FrIsJNsItqv9BdmrsYQFk",
+  sheetGid: "69094328",
+  sheetName: "DAILY REPORT & SALES OVERVIEW",
+  range: "B1:CJ411"
+};
+
 main().catch((error) => {
   console.error("[markarta-report] Failed to generate report.");
   console.error(error);
@@ -69,9 +76,10 @@ async function main() {
     runBrandTask("sebelas", () => buildSebelasCoffeeSection(basisDates)),
     runBrandTask("snapobox", () => buildSnapoboxSection(basisDates)),
     runBrandTask("zona", () => buildZonaSection(basisDates)),
-    runBrandTask("snaposnap", () => buildSnapOSnapSection(basisDates))
+    runBrandTask("snaposnap", () => buildSnapOSnapSection(basisDates)),
+    runBrandTask("tunas", () => buildTunasMekarDentalSheetSection(basisDates))
   ];
-  if (hasShopeeConfig()) {
+  if (!hasTmdSheetConfig() && hasShopeeConfig()) {
     tasks.push(runBrandTask("tunas", () => buildTunasMekarDentalSection(basisDates)));
   }
 
@@ -1347,6 +1355,134 @@ function hasShopeeConfig() {
       process.env.SHOPEE_SHOP_ID &&
       (process.env.SHOPEE_REFRESH_TOKEN || process.env.SHOPEE_ACCESS_TOKEN)
   );
+}
+
+function hasTmdSheetConfig() {
+  return Boolean(process.env.TMD_SHEET_ID || TMD_SHEET_DEFAULTS.spreadsheetId);
+}
+
+async function buildTunasMekarDentalSheetSection(basisDates) {
+  const sheetRows = await fetchTmdDailyRevenueRows();
+  const currentRows = filterRowsByDateRange(sheetRows, basisDates.monthlyCurrentStart, basisDates.closedDay);
+  const previousRows = filterRowsByDateRange(sheetRows, basisDates.monthlyPreviousStart, basisDates.monthlyPreviousEnd);
+  const dailyCurrentRow = sheetRows.find((row) => sameDate(row.date, basisDates.closedDay));
+  const dailyPreviousRow = sheetRows.find((row) => sameDate(row.date, basisDates.previousDay));
+  const recentRows = currentRows.slice(-7).reverse();
+
+  const monthlyCurrent = sum(currentRows.map((row) => row.revenue));
+  const monthlyPrevious = sum(previousRows.map((row) => row.revenue));
+  const dailyCurrent = dailyCurrentRow?.revenue ?? 0;
+  const dailyPrevious = dailyPreviousRow?.revenue ?? 0;
+  const bestDay = currentRows.reduce((best, row) => (row.revenue > (best?.revenue ?? -1) ? row : best), null);
+  const lastFilledRow = [...sheetRows].reverse().find((row) => row.revenue > 0);
+
+  return {
+    brandId: "tunas",
+    section: {
+      id: "tunas",
+      name: "Tunas Mekar Dental",
+      source: "Google Sheets",
+      state: "live",
+      note: "Data otomatis ditarik dari Google Sheet onsite admin: kolom B untuk tanggal dan kolom CJ untuk TOTAL DAILY REVENUE.",
+      summaryCards: [
+        {
+          label: "Omset MTD",
+          value: formatCurrency(monthlyCurrent),
+          note: `TOTAL DAILY REVENUE ${formatRangeLabel(basisDates.monthlyCurrentStart, basisDates.closedDay)}`,
+          changePct: computePct(monthlyCurrent, monthlyPrevious)
+        },
+        {
+          label: "Omset Harian",
+          value: formatCurrency(dailyCurrent),
+          note: `${formatDateForHumans(basisDates.closedDay)} vs ${formatDateForHumans(basisDates.previousDay)}`,
+          changePct: computePct(dailyCurrent, dailyPrevious)
+        },
+        {
+          label: "Hari Terkuat MTD",
+          value: bestDay ? formatCurrency(bestDay.revenue) : "-",
+          note: bestDay ? formatDateForHumans(bestDay.date) : "Belum ada revenue bulan ini"
+        },
+        {
+          label: "Last Input",
+          value: lastFilledRow ? formatDateForHumans(lastFilledRow.date) : "-",
+          note: "Baris terakhir dengan revenue lebih dari Rp0 di sheet"
+        }
+      ],
+      table: {
+        title: "Revenue harian TMD",
+        description: "7 hari terakhir dari kolom CJ TOTAL DAILY REVENUE.",
+        columns: [
+          { key: "date", label: "Tanggal" },
+          { key: "revenue", label: "Revenue", align: "right" },
+          { key: "change", label: "Vs Hari Sebelumnya", align: "right" }
+        ],
+        rows: recentRows.map((row) => {
+          const previousRow = sheetRows.find((item) => sameDate(item.date, addDays(row.date, -1)));
+          return {
+            date: formatDateForHumans(row.date),
+            revenue: formatCurrency(row.revenue),
+            change: formatSignedPct(computePct(row.revenue, previousRow?.revenue ?? 0))
+          };
+        })
+      },
+      notes: [
+        "Source sheet: SUMBER DATA TMD 2026, tab DAILY REPORT & SALES OVERVIEW.",
+        "Kolom yang dipakai: B Tanggal ORDERAN MASUK dan CJ TOTAL DAILY REVENUE.",
+        "Angka mengikuti input admin onsite; jika hari berjalan belum final, dashboard tetap memakai hari tertutup penuh sesuai basis report."
+      ]
+    },
+    metrics: {
+      monthlyCurrent,
+      monthlyPrevious,
+      dailyCurrent,
+      dailyPrevious
+    }
+  };
+}
+
+async function fetchTmdDailyRevenueRows() {
+  const spreadsheetId = process.env.TMD_SHEET_ID || TMD_SHEET_DEFAULTS.spreadsheetId;
+  const sheetGid = process.env.TMD_SHEET_GID || TMD_SHEET_DEFAULTS.sheetGid;
+  const range = process.env.TMD_SHEET_RANGE || TMD_SHEET_DEFAULTS.range;
+  const csvUrl = `https://docs.google.com/spreadsheets/d/${encodeURIComponent(spreadsheetId)}/export?format=csv&gid=${encodeURIComponent(sheetGid)}&range=${encodeURIComponent(range)}`;
+  const response = await fetch(csvUrl, { headers: { accept: "text/csv" } });
+
+  if (!response.ok) {
+    throw Object.assign(new Error(`Google Sheet TMD gagal dibaca: HTTP ${response.status}`), { brandId: "tunas" });
+  }
+
+  const csv = await response.text();
+  const rows = parseCsv(csv);
+  const parsedRows = [];
+
+  for (const row of rows) {
+    const date = parseTmdSheetDate(row[0]);
+    if (!date) continue;
+    parsedRows.push({
+      date,
+      revenue: parseCurrencyLike(row[row.length - 1])
+    });
+  }
+
+  if (!parsedRows.length) {
+    throw Object.assign(
+      new Error(`Google Sheet TMD tidak punya baris tanggal/revenue yang valid di range ${TMD_SHEET_DEFAULTS.range}.`),
+      { brandId: "tunas" }
+    );
+  }
+
+  return parsedRows.sort((left, right) => left.date.getTime() - right.date.getTime());
+}
+
+function parseTmdSheetDate(value) {
+  if (value instanceof Date) return value;
+  const match = String(value ?? "").trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!match) return null;
+  return createBusinessDate(Number(match[3]), Number(match[1]), Number(match[2]));
+}
+
+function filterRowsByDateRange(rows, startDate, endDate) {
+  return rows.filter((row) => row.date >= startDate && row.date <= endDate);
 }
 
 async function buildTunasMekarDentalSection(basisDates) {

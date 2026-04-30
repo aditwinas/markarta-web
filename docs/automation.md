@@ -15,6 +15,9 @@ Required GitHub Actions secrets:
 - `ZONA_USERNAME`
 - `ZONA_PASSWORD`
 - `SNAPOSNAP_SHEET_ID`
+- `TMD_SHEET_ID` (optional, default points to the shared TMD Google Sheet)
+- `TMD_SHEET_GID` (optional, default points to `DAILY REPORT & SALES OVERVIEW`)
+- `TMD_SHEET_RANGE` (optional, default `B1:CJ411`)
 - `SHOPEE_PARTNER_ID`
 - `SHOPEE_PARTNER_KEY`
 - `SHOPEE_SHOP_ID`
@@ -47,9 +50,20 @@ After approval, the report should use the official Open API endpoints:
 - `GET /api/open-api/v1/en/report/productsalesbysku`
 - `GET /api/open-api/v1/en/report/salesitemspergroup`
 
+## Tunas Mekar Dental Status
+
+Tunas Mekar Dental now uses Google Sheets as the primary source because the onsite admin updates it close to real time:
+
+- Spreadsheet: `SUMBER DATA TMD 2026`
+- Tab: `DAILY REPORT & SALES OVERVIEW`
+- Date column: `B` / `Tanggal ORDERAN MASUK`
+- Revenue column: `CJ` / `TOTAL DAILY REVENUE`
+
+The generator reads the sheet as CSV and calculates daily revenue, MTD revenue, previous-day comparison, previous-month MTD comparison, and a 7-day daily table.
+
 ## Shopee Status
 
-Tunas Mekar Dental is prepared for Shopee Open Platform. The report generator will switch the brand from placeholder to live automatically when these GitHub Actions secrets exist:
+Shopee Open Platform remains available as a secondary implementation path if direct marketplace item detail is needed later. The report generator can use Shopee when these GitHub Actions secrets exist and the Google Sheet path is disabled:
 
 - `SHOPEE_PARTNER_ID`
 - `SHOPEE_PARTNER_KEY`

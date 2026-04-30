@@ -33,7 +33,7 @@ function DashboardPageContent() {
         <PageHeader
           eyebrow="Morning Report Center"
           title="Dashboard multi-brand yang siap dibuka dari desktop maupun mobile"
-          description="Semua brand penting Markarta dirangkum dalam format report yang sama: omset MTD, progres harian, progres bulanan, dan produk atau unit teratas. Tunas Mekar Dental serta Balcos Compound tetap tampil sebagai placeholder sampai source datanya siap."
+          description="Semua brand penting Markarta dirangkum dalam format report yang sama: omset MTD, progres harian, progres bulanan, dan produk atau unit teratas. Tunas Mekar Dental memakai Google Sheet onsite, sementara Balcos Compound tetap tampil sebagai placeholder sampai source datanya siap."
         />
 
         <SectionCard

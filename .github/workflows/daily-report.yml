@@ -22,6 +22,9 @@ jobs:
       ZONA_USERNAME: ${{ secrets.ZONA_USERNAME }}
       ZONA_PASSWORD: ${{ secrets.ZONA_PASSWORD }}
       SNAPOSNAP_SHEET_ID: ${{ secrets.SNAPOSNAP_SHEET_ID }}
+      TMD_SHEET_ID: ${{ secrets.TMD_SHEET_ID }}
+      TMD_SHEET_GID: ${{ secrets.TMD_SHEET_GID }}
+      TMD_SHEET_RANGE: ${{ secrets.TMD_SHEET_RANGE }}
       SHOPEE_PARTNER_ID: ${{ secrets.SHOPEE_PARTNER_ID }}
       SHOPEE_PARTNER_KEY: ${{ secrets.SHOPEE_PARTNER_KEY }}
       SHOPEE_SHOP_ID: ${{ secrets.SHOPEE_SHOP_ID }}
