@@ -6,8 +6,11 @@ on:
     # 03:15 WIB daily. GitHub cron is UTC, so this runs at 20:15 UTC.
     - cron: "15 20 * * *"
 
+permissions:
+  contents: write
+
 jobs:
-  refresh-and-deploy:
+  refresh-data:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -30,13 +33,12 @@ jobs:
       SHOPEE_SHOP_ID: ${{ secrets.SHOPEE_SHOP_ID }}
       SHOPEE_ACCESS_TOKEN: ${{ secrets.SHOPEE_ACCESS_TOKEN }}
       SHOPEE_REFRESH_TOKEN: ${{ secrets.SHOPEE_REFRESH_TOKEN }}
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -47,8 +49,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static report
-        run: npx vercel build --prod --token="$VERCEL_TOKEN"
+      - name: Refresh report JSON
+        run: npm run refresh:report
 
-      - name: Deploy production
-        run: npx vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+      - name: Commit refreshed data
+        run: |
+          if git diff --quiet -- src/data/markarta-report.json; then
+            echo "No report data changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/markarta-report.json
+          git commit -m "Refresh daily POS report data"
+          git push

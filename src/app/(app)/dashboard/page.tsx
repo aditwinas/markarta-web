@@ -3,7 +3,7 @@
 import { ArrowDownRight, ArrowUpRight, BellRing, CalendarRange, DatabaseZap, Mail, Store } from "lucide-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, type ReactNode } from "react";
+import { Suspense, useEffect, useMemo, useState, type ReactNode } from "react";
 
 import { AppShell } from "@/components/app/app-shell";
 import { MetricCard } from "@/components/app/metric-card";
@@ -15,17 +15,59 @@ import { Button } from "@/components/ui/button";
 import { normalizeBrand, normalizeRole } from "@/lib/demo-session";
 import { brands } from "@/lib/mock-data";
 import { buildDemoHref } from "@/lib/navigation";
-import { brandReports, portfolioSummary, reportBasis } from "@/lib/pos-report-data";
+import { reportPayload } from "@/lib/pos-report-data";
+import type { PosReportPayload } from "@/lib/pos-report-types";
 import { cn } from "@/lib/utils";
+
+const LIVE_REPORT_URL = "https://raw.githubusercontent.com/aditwinas/markarta-web/main/src/data/markarta-report.json";
 
 function DashboardPageContent() {
   const searchParams = useSearchParams();
+  const [payload, setPayload] = useState<PosReportPayload>(reportPayload);
+  const [isLiveData, setIsLiveData] = useState(false);
   const role = normalizeRole(searchParams.get("role") ?? undefined);
   const brandId = normalizeBrand(searchParams.get("brand") ?? undefined);
+  const { brandReports, portfolioSummary, reportBasis } = payload;
   const selectedBrand = brandReports.find((item) => item.id === brandId)?.id ?? brandReports[0].id;
   const liveBrandCount = brandReports.filter((item) => item.state === "live").length;
   const fallbackBrandCount = brandReports.filter((item) => item.state === "fallback").length;
   const placeholderBrandCount = brandReports.filter((item) => item.state === "placeholder").length;
+  const activeBrandNote = useMemo(() => {
+    const label = liveBrandCount === 1 ? "brand" : "brand";
+    return `Total ${liveBrandCount} ${label} dengan data ${isLiveData ? "JSON live" : "fallback build"}`;
+  }, [isLiveData, liveBrandCount]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function loadLiveReport() {
+      try {
+        const response = await fetch(`${LIVE_REPORT_URL}?ts=${Date.now()}`, {
+          cache: "no-store"
+        });
+        if (!response.ok) return;
+
+        const nextPayload = (await response.json()) as PosReportPayload;
+        if (
+          !ignore &&
+          nextPayload?.reportBasis &&
+          Array.isArray(nextPayload.brandReports) &&
+          isSameOrNewerReport(nextPayload, reportPayload)
+        ) {
+          setPayload(nextPayload);
+          setIsLiveData(true);
+        }
+      } catch {
+        if (!ignore) setIsLiveData(false);
+      }
+    }
+
+    loadLiveReport();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   return (
     <AppShell role={role} brand={selectedBrand} pathname="/dashboard">
@@ -57,7 +99,7 @@ function DashboardPageContent() {
           <MetricCard
             label="Omset MTD Aktif"
             value={portfolioSummary.monthlyRevenue}
-            note="Total 4 brand dengan data live"
+            note={activeBrandNote}
             trend={portfolioSummary.monthlyChangePct ?? undefined}
           />
           <MetricCard
@@ -243,8 +285,8 @@ function DashboardPageContent() {
           <div className="grid gap-4 md:grid-cols-3">
             <AutomationCard
               icon={<DatabaseZap className="h-5 w-5 text-markarta-blue" />}
-              title="03.00 refresh website"
-              note="Tarik data POS, bangun ulang static site, lalu deploy ke domain utama Vercel."
+              title="03.15 refresh data"
+              note="Tarik data POS, update JSON report di GitHub, lalu dashboard live membaca data terbaru tanpa rebuild penuh."
             />
             <AutomationCard
               icon={<Mail className="h-5 w-5 text-markarta-blue" />}
@@ -269,6 +311,37 @@ export default function DashboardPage() {
       <DashboardPageContent />
     </Suspense>
   );
+}
+
+function isSameOrNewerReport(nextPayload: PosReportPayload, fallbackPayload: PosReportPayload) {
+  const nextTime = parseReportDateLabel(nextPayload.reportBasis.dailyCurrent);
+  const fallbackTime = parseReportDateLabel(fallbackPayload.reportBasis.dailyCurrent);
+
+  if (nextTime === null || fallbackTime === null) return true;
+  return nextTime >= fallbackTime;
+}
+
+function parseReportDateLabel(value: string) {
+  const match = value.match(/^(\d{1,2}) ([A-Za-z]+) (\d{4})$/);
+  if (!match) return null;
+
+  const monthIndex = [
+    "Januari",
+    "Februari",
+    "Maret",
+    "April",
+    "Mei",
+    "Juni",
+    "Juli",
+    "Agustus",
+    "September",
+    "Oktober",
+    "November",
+    "Desember"
+  ].findIndex((month) => month.toLowerCase() === match[2].toLowerCase());
+
+  if (monthIndex < 0) return null;
+  return Date.UTC(Number(match[3]), monthIndex, Number(match[1]));
 }
 
 function BasisCard({

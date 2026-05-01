@@ -4,7 +4,7 @@ import type { BrandReportSection, PortfolioSummary, PosReportPayload, ReportBasi
 
 const payload = reportData as PosReportPayload;
 
+export const reportPayload: PosReportPayload = payload;
 export const reportBasis: ReportBasis = payload.reportBasis;
 export const portfolioSummary: PortfolioSummary = payload.portfolioSummary;
 export const brandReports: BrandReportSection[] = payload.brandReports;
-
