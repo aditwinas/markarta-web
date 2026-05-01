@@ -1,27 +1,27 @@
 {
   "reportBasis": {
     "label": "Basis report yang dipakai sekarang",
-    "monthlyCurrent": "1 April 2026 - 30 April 2026",
-    "monthlyPrevious": "1 Maret 2026 - 30 Maret 2026",
-    "dailyCurrent": "30 April 2026",
-    "dailyPrevious": "29 April 2026",
-    "updatedAt": "1 Mei 2026, 12.53 WIB"
+    "monthlyCurrent": "1 Mei 2026 - 1 Mei 2026",
+    "monthlyPrevious": "1 April 2026 - 1 April 2026",
+    "dailyCurrent": "1 Mei 2026",
+    "dailyPrevious": "30 April 2026",
+    "updatedAt": "2 Mei 2026, 04.06 WIB"
   },
   "portfolioSummary": {
-    "activeBrands": 5,
+    "activeBrands": 1,
     "trackedBrands": 6,
-    "monthlyRevenue": 4066301011,
-    "monthlyChangePct": 18.114547552106224,
+    "monthlyRevenue": 2647097360,
+    "monthlyChangePct": 14.165036773437748,
     "dailyRevenue": 77380900,
-    "dailyChangePct": 0.6697989380279346
+    "dailyChangePct": 2.5102668044405583
   },
   "brandReports": [
     {
       "id": "sebelas",
       "name": "Sebelas Coffee",
       "source": "Olsera",
-      "state": "live",
-      "note": "7 outlet aktif, data otomatis ditarik dari endpoint multi-outlet summary Olsera.",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Olsera gagal pada run ini.",
       "summaryCards": [
         {
           "label": "Omset MTD",
@@ -197,6 +197,8 @@
         }
       ],
       "notes": [
+        "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
+        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
         "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
         "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
         "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
@@ -206,8 +208,8 @@
       "id": "snapobox",
       "name": "Snapobox",
       "source": "Photolab",
-      "state": "live",
-      "note": "28 kiosk aktif, dihitung dari export transaction per kiosk agar closed-day dan MTD tetap presisi.",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Photolab gagal pada run ini.",
       "summaryCards": [
         {
           "label": "Omset MTD",
@@ -330,6 +332,8 @@
         }
       ],
       "notes": [
+        "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
+        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
         "Snapobox belum punya dimensi produk yang stabil di dashboard saat ini, jadi fokus utama dashboard adalah performa kiosk.",
         "Masalah frame popularity bulanan tetap perlu dibereskan oleh developer Snapobox karena API publik masih memakai lifetime count.",
         "Semua angka gross income dihitung dari transaksi sukses pada export range yang sama."
@@ -339,8 +343,8 @@
       "id": "zona",
       "name": "Zona Massage",
       "source": "LatePoint",
-      "state": "live",
-      "note": "2 outlet aktif, progress ditarik langsung dari widget performance LatePoint.",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh LatePoint gagal pada run ini.",
       "summaryCards": [
         {
           "label": "Omset MTD",
@@ -439,6 +443,8 @@
         }
       ],
       "notes": [
+        "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
+        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
         "Omset dan appointment sudah direfresh ke basis tertutup lewat widget performance LatePoint.",
         "Top service masih memakai snapshot Appointments terakhir yang terverifikasi sampai ranking service ikut diotomatisasi penuh."
       ]
@@ -447,8 +453,8 @@
       "id": "snaposnap",
       "name": "Snap O' Snap",
       "source": "Google Sheet",
-      "state": "live",
-      "note": "4 cabang aktif, dibaca read-only dari Google Sheet sumber.",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Google Sheet gagal pada run ini.",
       "summaryCards": [
         {
           "label": "Omset MTD",
@@ -578,6 +584,8 @@
         }
       ],
       "notes": [
+        "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
+        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
         "Spreadsheet dibaca read-only, tidak ada perubahan ke file sumber.",
         "Header dan sheet name dibaca langsung dari tab overview masing-masing cabang agar automation tidak bergantung pada klik browser."
       ]
@@ -591,20 +599,20 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp1.419.203.651",
-          "note": "TOTAL DAILY REVENUE 1 April 2026 - 30 April 2026",
-          "changePct": 20.439802407980075
+          "value": "Rp0",
+          "note": "TOTAL DAILY REVENUE 1 Mei 2026 - 1 Mei 2026",
+          "changePct": -100
         },
         {
           "label": "Omset Harian",
           "value": "Rp0",
-          "note": "30 April 2026 vs 29 April 2026",
-          "changePct": -100
+          "note": "1 Mei 2026 vs 30 April 2026",
+          "changePct": null
         },
         {
           "label": "Hari Terkuat MTD",
-          "value": "Rp93.503.765",
-          "note": "6 April 2026"
+          "value": "Rp0",
+          "note": "1 Mei 2026"
         },
         {
           "label": "Last Input",
@@ -633,39 +641,9 @@
         ],
         "rows": [
           {
-            "date": "30 April 2026",
+            "date": "1 Mei 2026",
             "revenue": "Rp0",
-            "change": "-100,0%"
-          },
-          {
-            "date": "29 April 2026",
-            "revenue": "Rp327.552",
-            "change": "-98,6%"
-          },
-          {
-            "date": "28 April 2026",
-            "revenue": "Rp23.363.474",
-            "change": "-49,5%"
-          },
-          {
-            "date": "27 April 2026",
-            "revenue": "Rp46.243.820",
-            "change": "+108,4%"
-          },
-          {
-            "date": "26 April 2026",
-            "revenue": "Rp22.191.588",
-            "change": "-55,5%"
-          },
-          {
-            "date": "25 April 2026",
-            "revenue": "Rp49.856.530",
-            "change": "+84,5%"
-          },
-          {
-            "date": "24 April 2026",
-            "revenue": "Rp27.025.833",
-            "change": "+25,2%"
+            "change": "-"
           }
         ]
       },
