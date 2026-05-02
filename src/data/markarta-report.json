@@ -1,17 +1,17 @@
 {
   "reportBasis": {
     "label": "Basis report yang dipakai sekarang",
-    "monthlyCurrent": "1 Mei 2026 - 1 Mei 2026",
-    "monthlyPrevious": "1 April 2026 - 1 April 2026",
-    "dailyCurrent": "1 Mei 2026",
-    "dailyPrevious": "30 April 2026",
-    "updatedAt": "2 Mei 2026, 04.06 WIB"
+    "monthlyCurrent": "1 Mei 2026 - 2 Mei 2026",
+    "monthlyPrevious": "1 April 2026 - 2 April 2026",
+    "dailyCurrent": "2 Mei 2026",
+    "dailyPrevious": "1 Mei 2026",
+    "updatedAt": "3 Mei 2026, 03.59 WIB"
   },
   "portfolioSummary": {
     "activeBrands": 1,
     "trackedBrands": 6,
     "monthlyRevenue": 2647097360,
-    "monthlyChangePct": 14.165036773437748,
+    "monthlyChangePct": 10.940834532591987,
     "dailyRevenue": 77380900,
     "dailyChangePct": 2.5102668044405583
   },
@@ -198,7 +198,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
-        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
+        "Refresh otomatis gagal pada 3 Mei 2026, 03.59 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
         "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
         "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
         "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
@@ -333,7 +333,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
-        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
+        "Refresh otomatis gagal pada 3 Mei 2026, 03.59 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
         "Snapobox belum punya dimensi produk yang stabil di dashboard saat ini, jadi fokus utama dashboard adalah performa kiosk.",
         "Masalah frame popularity bulanan tetap perlu dibereskan oleh developer Snapobox karena API publik masih memakai lifetime count.",
         "Semua angka gross income dihitung dari transaksi sukses pada export range yang sama."
@@ -444,7 +444,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
-        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
+        "Refresh otomatis gagal pada 3 Mei 2026, 03.59 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
         "Omset dan appointment sudah direfresh ke basis tertutup lewat widget performance LatePoint.",
         "Top service masih memakai snapshot Appointments terakhir yang terverifikasi sampai ranking service ikut diotomatisasi penuh."
       ]
@@ -585,7 +585,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
-        "Refresh otomatis gagal pada 2 Mei 2026, 04.06 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
+        "Refresh otomatis gagal pada 3 Mei 2026, 03.59 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
         "Spreadsheet dibaca read-only, tidak ada perubahan ke file sumber.",
         "Header dan sheet name dibaca langsung dari tab overview masing-masing cabang agar automation tidak bergantung pada klik browser."
       ]
@@ -600,13 +600,13 @@
         {
           "label": "Omset MTD",
           "value": "Rp0",
-          "note": "TOTAL DAILY REVENUE 1 Mei 2026 - 1 Mei 2026",
+          "note": "TOTAL DAILY REVENUE 1 Mei 2026 - 2 Mei 2026",
           "changePct": -100
         },
         {
           "label": "Omset Harian",
           "value": "Rp0",
-          "note": "1 Mei 2026 vs 30 April 2026",
+          "note": "2 Mei 2026 vs 1 Mei 2026",
           "changePct": null
         },
         {
@@ -616,7 +616,7 @@
         },
         {
           "label": "Last Input",
-          "value": "29 April 2026",
+          "value": "30 April 2026",
           "note": "Baris terakhir dengan revenue lebih dari Rp0 di sheet"
         }
       ],
@@ -641,9 +641,14 @@
         ],
         "rows": [
           {
-            "date": "1 Mei 2026",
+            "date": "2 Mei 2026",
             "revenue": "Rp0",
             "change": "-"
+          },
+          {
+            "date": "1 Mei 2026",
+            "revenue": "Rp0",
+            "change": "-100,0%"
           }
         ]
       },
