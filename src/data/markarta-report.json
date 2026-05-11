@@ -5,35 +5,35 @@
     "monthlyPrevious": "1 April 2026 - 10 April 2026",
     "dailyCurrent": "10 Mei 2026",
     "dailyPrevious": "9 Mei 2026",
-    "updatedAt": "11 Mei 2026, 04.04 WIB"
+    "updatedAt": "11 Mei 2026, 11.52 WIB"
   },
   "portfolioSummary": {
-    "activeBrands": 5,
+    "activeBrands": 4,
     "trackedBrands": 6,
-    "monthlyRevenue": 1246118126,
-    "monthlyChangePct": -18.393554841992817,
-    "dailyRevenue": 91633951,
-    "dailyChangePct": -13.277819839907329
+    "monthlyRevenue": 2541875834,
+    "monthlyChangePct": 13.143996538336774,
+    "dailyRevenue": 90070901,
+    "dailyChangePct": -3.898934955423134
   },
   "brandReports": [
     {
       "id": "sebelas",
       "name": "Sebelas Coffee",
       "source": "Olsera",
-      "state": "live",
-      "note": "7 outlet aktif, data otomatis ditarik dari endpoint multi-outlet summary Olsera.",
+      "state": "fallback",
+      "note": "Snapshot terakhir valid dipakai karena refresh Olsera gagal pada run ini.",
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp647.628.450",
+          "value": "Rp1.860.559.860",
           "note": "Semua outlet Sebelas Coffee",
-          "changePct": 13.668889068460837
+          "changePct": 44.30217626267227
         },
         {
           "label": "Omset Harian",
-          "value": "Rp60.048.950",
-          "note": "10 Mei 2026 vs 9 Mei 2026",
-          "changePct": -14.422150585445385
+          "value": "Rp58.485.900",
+          "note": "30 April 2026 vs 29 April 2026",
+          "changePct": 2.0055462536626205
         },
         {
           "label": "Top Product",
@@ -43,7 +43,7 @@
         {
           "label": "Outlet Terkuat",
           "value": "HOS Cokro",
-          "note": "MTD Rp141.440.600"
+          "note": "MTD Rp383.674.500"
         }
       ],
       "table": {
@@ -66,57 +66,64 @@
           },
           {
             "key": "daily",
-            "label": "10 Mei",
+            "label": "30 Apr",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 9 Mei",
+            "label": "Vs 29 Apr",
             "align": "right"
           }
         ],
         "rows": [
           {
             "outlet": "Sebelas Coffee HOS Cokro",
-            "mtd": "Rp141.440.600",
-            "mtdChange": "+16,4%",
-            "daily": "Rp15.010.500",
-            "dailyChange": "+6,2%"
-          },
-          {
-            "outlet": "Sebelas Coffee Nologaten",
-            "mtd": "Rp122.917.500",
-            "mtdChange": "+13,5%",
-            "daily": "Rp12.173.500",
-            "dailyChange": "-14,6%"
+            "mtd": "Rp383.674.500",
+            "mtdChange": "+44,2%",
+            "daily": "Rp11.448.500",
+            "dailyChange": "+14,8%"
           },
           {
             "outlet": "Sebelas Coffee Veteran",
-            "mtd": "Rp119.383.500",
-            "mtdChange": "+13,7%",
-            "daily": "Rp12.138.000",
-            "dailyChange": "-10,2%"
+            "mtd": "Rp350.274.700",
+            "mtdChange": "+45,4%",
+            "daily": "Rp11.214.800",
+            "dailyChange": "-7,6%"
           },
           {
-            "outlet": "Sebelas Coffee Auriga Jakal",
-            "mtd": "Rp103.994.250",
-            "mtdChange": "+15,9%",
-            "daily": "Rp10.912.950",
-            "dailyChange": "-4,5%"
+            "outlet": "Sebelas Coffee Nologaten",
+            "mtd": "Rp324.460.000",
+            "mtdChange": "+32,2%",
+            "daily": "Rp9.962.000",
+            "dailyChange": "+3,7%"
           },
           {
             "outlet": "Sebelas Coffee Gejayan",
-            "mtd": "Rp101.690.600",
-            "mtdChange": "+13,6%",
-            "daily": "Rp4.259.500",
-            "dailyChange": "-61,5%"
+            "mtd": "Rp288.556.800",
+            "mtdChange": "+76,6%",
+            "daily": "Rp11.440.400",
+            "dailyChange": "+16,3%"
+          },
+          {
+            "outlet": "Sebelas Coffee Auriga Jakal",
+            "mtd": "Rp274.511.000",
+            "mtdChange": "+280,8%",
+            "daily": "Rp8.420.700",
+            "dailyChange": "-21,9%"
           },
           {
             "outlet": "Sebelas Coffee Concat",
-            "mtd": "Rp58.202.000",
-            "mtdChange": "+4,5%",
-            "daily": "Rp5.554.500",
-            "dailyChange": "-3,6%"
+            "mtd": "Rp157.390.460",
+            "mtdChange": "+25,4%",
+            "daily": "Rp5.999.500",
+            "dailyChange": "+20,0%"
+          },
+          {
+            "outlet": "Sebelas Coffee Monjali",
+            "mtd": "Rp81.692.400",
+            "mtdChange": "-53,6%",
+            "daily": "Rp0",
+            "dailyChange": "-"
           }
         ]
       },
@@ -190,6 +197,8 @@
         }
       ],
       "notes": [
+        "Basis data fallback yang masih ditampilkan: 30 April 2026 vs 29 April 2026.",
+        "Refresh otomatis gagal pada 11 Mei 2026, 11.52 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
         "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
         "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
         "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
@@ -584,15 +593,15 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp311.204.675",
+          "value": "Rp394.030.973",
           "note": "TOTAL DAILY REVENUE 1 Mei 2026 - 10 Mei 2026",
-          "changePct": -54.35174661455299
+          "changePct": -42.20258517254527
         },
         {
           "label": "Omset Harian",
           "value": "Rp0",
           "note": "10 Mei 2026 vs 9 Mei 2026",
-          "changePct": null
+          "changePct": -100
         },
         {
           "label": "Hari Terkuat MTD",
@@ -601,7 +610,7 @@
         },
         {
           "label": "Last Input",
-          "value": "7 Mei 2026",
+          "value": "9 Mei 2026",
           "note": "Baris terakhir dengan revenue lebih dari Rp0 di sheet"
         }
       ],
@@ -628,22 +637,22 @@
           {
             "date": "10 Mei 2026",
             "revenue": "Rp0",
-            "change": "-"
-          },
-          {
-            "date": "9 Mei 2026",
-            "revenue": "Rp0",
-            "change": "-"
-          },
-          {
-            "date": "8 Mei 2026",
-            "revenue": "Rp0",
             "change": "-100,0%"
           },
           {
+            "date": "9 Mei 2026",
+            "revenue": "Rp894.185",
+            "change": "-97,8%"
+          },
+          {
+            "date": "8 Mei 2026",
+            "revenue": "Rp41.016.786",
+            "change": "-0,2%"
+          },
+          {
             "date": "7 Mei 2026",
-            "revenue": "Rp164.461",
-            "change": "-99,7%"
+            "revenue": "Rp41.079.788",
+            "change": "-24,7%"
           },
           {
             "date": "6 Mei 2026",
