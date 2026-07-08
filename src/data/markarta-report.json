@@ -1,19 +1,19 @@
 {
   "reportBasis": {
     "label": "Basis report yang dipakai sekarang",
-    "monthlyCurrent": "1 Juli 2026 - 7 Juli 2026",
-    "monthlyPrevious": "1 Juni 2026 - 7 Juni 2026",
-    "dailyCurrent": "7 Juli 2026",
-    "dailyPrevious": "6 Juli 2026",
-    "updatedAt": "8 Juli 2026, 04.39 WIB"
+    "monthlyCurrent": "1 Juli 2026 - 8 Juli 2026",
+    "monthlyPrevious": "1 Juni 2026 - 8 Juni 2026",
+    "dailyCurrent": "8 Juli 2026",
+    "dailyPrevious": "7 Juli 2026",
+    "updatedAt": "9 Juli 2026, 04.22 WIB"
   },
   "portfolioSummary": {
     "activeBrands": 5,
     "trackedBrands": 6,
-    "monthlyRevenue": 828120156,
-    "monthlyChangePct": -30.745696947512048,
-    "dailyRevenue": 89906200,
-    "dailyChangePct": -2.1360304626589257
+    "monthlyRevenue": 1070530368,
+    "monthlyChangePct": -19.275031105867885,
+    "dailyRevenue": 87941936,
+    "dailyChangePct": -42.048920546852145
   },
   "brandReports": [
     {
@@ -25,15 +25,15 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp463.040.900",
+          "value": "Rp528.953.400",
           "note": "Semua outlet Sebelas Coffee",
-          "changePct": -0.6472485312701256
+          "changePct": -0.33950670492534835
         },
         {
           "label": "Omset Harian",
-          "value": "Rp65.721.200",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
-          "changePct": -3.94038917171292
+          "value": "Rp65.912.500",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
+          "changePct": 0.2910780691770692
         },
         {
           "label": "Top Product",
@@ -43,7 +43,7 @@
         {
           "label": "Outlet Terkuat",
           "value": "HOS Cokro",
-          "note": "MTD Rp100.533.200"
+          "note": "MTD Rp114.576.000"
         }
       ],
       "table": {
@@ -66,64 +66,64 @@
           },
           {
             "key": "daily",
-            "label": "7 Jul",
+            "label": "8 Jul",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 6 Jul",
+            "label": "Vs 7 Jul",
             "align": "right"
           }
         ],
         "rows": [
           {
             "outlet": "Sebelas Coffee HOS Cokro",
-            "mtd": "Rp100.533.200",
-            "mtdChange": "+3,1%",
-            "daily": "Rp15.710.400",
-            "dailyChange": "+12,2%"
+            "mtd": "Rp114.576.000",
+            "mtdChange": "+4,1%",
+            "daily": "Rp14.042.800",
+            "dailyChange": "-10,6%"
           },
           {
             "outlet": "Sebelas Coffee Veteran",
-            "mtd": "Rp82.794.400",
-            "mtdChange": "-8,0%",
-            "daily": "Rp10.546.500",
-            "dailyChange": "-14,1%"
+            "mtd": "Rp93.977.900",
+            "mtdChange": "-7,3%",
+            "daily": "Rp11.183.500",
+            "dailyChange": "+6,0%"
           },
           {
             "outlet": "Sebelas Coffee Nologaten",
-            "mtd": "Rp69.063.800",
-            "mtdChange": "-1,3%",
-            "daily": "Rp10.419.500",
-            "dailyChange": "+1,0%"
+            "mtd": "Rp78.360.000",
+            "mtdChange": "-2,5%",
+            "daily": "Rp9.296.200",
+            "dailyChange": "-10,8%"
           },
           {
             "outlet": "Sebelas Coffee Auriga Jakal",
-            "mtd": "Rp59.819.400",
-            "mtdChange": "-9,7%",
-            "daily": "Rp8.063.300",
-            "dailyChange": "-13,0%"
+            "mtd": "Rp68.297.400",
+            "mtdChange": "-9,2%",
+            "daily": "Rp8.478.000",
+            "dailyChange": "+5,1%"
           },
           {
             "outlet": "Sebelas Coffee Gejayan",
-            "mtd": "Rp58.149.100",
-            "mtdChange": "-12,1%",
-            "daily": "Rp7.878.000",
-            "dailyChange": "-2,0%"
+            "mtd": "Rp67.735.900",
+            "mtdChange": "-9,3%",
+            "daily": "Rp9.586.800",
+            "dailyChange": "+21,7%"
           },
           {
             "outlet": "Sebelas Coffee Monjali",
-            "mtd": "Rp57.574.500",
-            "mtdChange": "+45,0%",
-            "daily": "Rp7.938.000",
-            "dailyChange": "-14,8%"
+            "mtd": "Rp65.244.200",
+            "mtdChange": "+37,8%",
+            "daily": "Rp7.669.700",
+            "dailyChange": "-3,4%"
           },
           {
             "outlet": "Sebelas Coffee Concat",
-            "mtd": "Rp35.106.500",
-            "mtdChange": "-3,6%",
-            "daily": "Rp5.165.500",
-            "dailyChange": "-0,5%"
+            "mtd": "Rp40.762.000",
+            "mtdChange": "-2,1%",
+            "daily": "Rp5.655.500",
+            "dailyChange": "+9,5%"
           }
         ]
       },
@@ -211,20 +211,20 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp151.770.000",
+          "value": "Rp168.505.000",
           "note": "Semua kiosk Snapobox",
-          "changePct": 15.42761531733658
+          "changePct": 16.431162549663153
         },
         {
           "label": "Omset Harian",
-          "value": "Rp19.095.000",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
-          "changePct": 5.3517241379310345
+          "value": "Rp16.735.000",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
+          "changePct": -12.3592563498298
         },
         {
           "label": "Top Kiosk",
           "value": "SOB SALATIGA - ANAK PANAH",
-          "note": "MTD Rp14.580.000"
+          "note": "MTD Rp16.500.000"
         },
         {
           "label": "Kiosk Live",
@@ -252,57 +252,57 @@
           },
           {
             "key": "daily",
-            "label": "7 Jul",
+            "label": "8 Jul",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 6 Jul",
+            "label": "Vs 7 Jul",
             "align": "right"
           }
         ],
         "rows": [
           {
             "kiosk": "SOB SALATIGA - ANAK PANAH",
-            "mtd": "Rp14.580.000",
-            "mtdChange": "+12,8%",
-            "daily": "Rp1.980.000",
-            "dailyChange": "+11,9%"
+            "mtd": "Rp16.500.000",
+            "mtdChange": "+18,0%",
+            "daily": "Rp1.920.000",
+            "dailyChange": "-3,0%"
           },
           {
             "kiosk": "SOB MALANG - JOKOPI",
-            "mtd": "Rp11.970.000",
-            "mtdChange": "+11,5%",
-            "daily": "Rp1.920.000",
-            "dailyChange": "+20,8%"
+            "mtd": "Rp13.110.000",
+            "mtdChange": "+11,2%",
+            "daily": "Rp1.140.000",
+            "dailyChange": "-40,6%"
           },
           {
             "kiosk": "SOB PEKANBARU - TETRA",
-            "mtd": "Rp9.930.000",
-            "mtdChange": "+5,1%",
-            "daily": "Rp1.230.000",
-            "dailyChange": "+5,1%"
+            "mtd": "Rp11.310.000",
+            "mtdChange": "+8,0%",
+            "daily": "Rp1.380.000",
+            "dailyChange": "+12,2%"
           },
           {
             "kiosk": "SOB MEDAN - CNB MANSYUR",
-            "mtd": "Rp8.940.000",
-            "mtdChange": "-4,2%",
-            "daily": "Rp900.000",
-            "dailyChange": "-16,7%"
+            "mtd": "Rp10.200.000",
+            "mtdChange": "-7,9%",
+            "daily": "Rp1.260.000",
+            "dailyChange": "+40,0%"
           },
           {
             "kiosk": "⁠SOB MEDAN - CNB SPARMAN",
-            "mtd": "Rp8.700.000",
-            "mtdChange": "+7,8%",
-            "daily": "Rp1.020.000",
-            "dailyChange": "-15,0%"
+            "mtd": "Rp9.750.000",
+            "mtdChange": "+3,2%",
+            "daily": "Rp1.050.000",
+            "dailyChange": "+2,9%"
           },
           {
             "kiosk": "SOB SEMARANG - ANAK PANAH UNIKA",
-            "mtd": "Rp8.490.000",
-            "mtdChange": "+5,2%",
-            "daily": "Rp930.000",
-            "dailyChange": "-20,5%"
+            "mtd": "Rp9.330.000",
+            "mtdChange": "+5,4%",
+            "daily": "Rp840.000",
+            "dailyChange": "-9,7%"
           }
         ]
       },
@@ -312,19 +312,19 @@
           "description": "Kiosk yang melonjak paling besar pada hari tertutup terakhir.",
           "items": [
             {
-              "name": "SOB PALEMBANG - TETRA",
-              "value": "+300,0%",
-              "detail": "Rp360.000 vs Rp90.000"
+              "name": "SOB BALI - PLAZA RENON",
+              "value": "+161,9%",
+              "detail": "Rp550.000 vs Rp210.000"
             },
             {
-              "name": "SOB SOLO - TETRA",
-              "value": "+86,4%",
-              "detail": "Rp1.230.000 vs Rp660.000"
+              "name": "SOB JOGJA - COSAN",
+              "value": "+100,0%",
+              "detail": "Rp240.000 vs Rp120.000"
             },
             {
-              "name": "SOB SIDOARJO - ARAH",
-              "value": "+76,9%",
-              "detail": "Rp690.000 vs Rp390.000"
+              "name": "SOB LAMPUNG - DJAWARA LAMPUNG",
+              "value": "+83,3%",
+              "detail": "Rp165.000 vs Rp90.000"
             }
           ]
         }
@@ -344,27 +344,27 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp35.890.000",
+          "value": "Rp40.940.000",
           "note": "Balcos Compound + Plemburan",
-          "changePct": 3.280575539568345
+          "changePct": 5.406797116374872
         },
         {
           "label": "Appointment MTD",
-          "value": "252",
+          "value": "290",
           "note": "Total booking bulan berjalan",
-          "changePct": -1.5625
+          "changePct": 1.7543859649122806
         },
         {
           "label": "Omset Harian",
-          "value": "Rp5.090.000",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
-          "changePct": -3.5984848484848486
+          "value": "Rp5.050.000",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
+          "changePct": -0.7858546168958742
         },
         {
           "label": "Appointment Harian",
-          "value": "37",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
-          "changePct": -9.75609756097561
+          "value": "38",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
+          "changePct": 2.7027027027027026
         }
       ],
       "table": {
@@ -392,31 +392,31 @@
           },
           {
             "key": "daily",
-            "label": "7 Jul",
+            "label": "8 Jul",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 6 Jul",
+            "label": "Vs 7 Jul",
             "align": "right"
           }
         ],
         "rows": [
           {
             "outlet": "Balcos Compound",
-            "mtd": "Rp20.920.000",
-            "mtdChange": "-9%",
-            "appointments": "144",
-            "daily": "Rp3.080.000",
-            "dailyChange": "-0,6%"
+            "mtd": "Rp24.470.000",
+            "mtdChange": "-4%",
+            "appointments": "171",
+            "daily": "Rp3.550.000",
+            "dailyChange": "+15,3%"
           },
           {
             "outlet": "Plemburan",
-            "mtd": "Rp14.970.000",
-            "mtdChange": "+27%",
-            "appointments": "108",
-            "daily": "Rp2.010.000",
-            "dailyChange": "-7,8%"
+            "mtd": "Rp16.470.000",
+            "mtdChange": "+23%",
+            "appointments": "119",
+            "daily": "Rp1.500.000",
+            "dailyChange": "-25,4%"
           }
         ]
       },
@@ -452,25 +452,25 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp6.467.500",
+          "value": "Rp8.887.500",
           "note": "4 cabang Snap O' Snap",
-          "changePct": 100.85403726708076
+          "changePct": 176.00931677018633
         },
         {
           "label": "Omset Harian",
           "value": "Rp0",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
           "changePct": null
         },
         {
           "label": "Top Paket",
           "value": "SNAP PORTRAIT (NEW)",
-          "note": "26 transaksi • Rp832.500"
+          "note": "34 transaksi • Rp1.187.500"
         },
         {
           "label": "Top Kategori",
           "value": "(Kosong)",
-          "note": "42 transaksi • Rp2.207.500"
+          "note": "46 transaksi • Rp3.907.500"
         }
       ],
       "table": {
@@ -493,34 +493,34 @@
           },
           {
             "key": "daily",
-            "label": "7 Jul",
+            "label": "8 Jul",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 6 Jul",
+            "label": "Vs 7 Jul",
             "align": "right"
           }
         ],
         "rows": [
           {
             "cabang": "GACA",
-            "mtd": "Rp2.200.000",
+            "mtd": "Rp3.680.000",
             "mtdChange": "-",
             "daily": "Rp0",
             "dailyChange": "-"
           },
           {
             "cabang": "VETERAN",
-            "mtd": "Rp2.567.500",
-            "mtdChange": "+1.611,7%",
+            "mtd": "Rp2.947.500",
+            "mtdChange": "+1.865,0%",
             "daily": "Rp0",
             "dailyChange": "-"
           },
           {
             "cabang": "HOS",
-            "mtd": "Rp1.700.000",
-            "mtdChange": "-44,6%",
+            "mtd": "Rp2.260.000",
+            "mtdChange": "-26,4%",
             "daily": "Rp0",
             "dailyChange": "-"
           },
@@ -540,18 +540,18 @@
           "items": [
             {
               "name": "SNAP PORTRAIT (NEW)",
-              "value": "26 transaksi",
-              "detail": "Rp832.500"
+              "value": "34 transaksi",
+              "detail": "Rp1.187.500"
             },
             {
               "name": "BASIC SNAP",
-              "value": "24 transaksi",
-              "detail": "Rp1.230.000"
+              "value": "31 transaksi",
+              "detail": "Rp1.945.000"
             },
             {
               "name": "GROUPIES",
-              "value": "22 transaksi",
-              "detail": "Rp2.925.000"
+              "value": "28 transaksi",
+              "detail": "Rp3.885.000"
             }
           ]
         },
@@ -561,18 +561,18 @@
           "items": [
             {
               "name": "(Kosong)",
-              "value": "42 transaksi",
-              "detail": "Rp2.207.500"
+              "value": "46 transaksi",
+              "detail": "Rp3.907.500"
             },
             {
               "name": "FRIEND",
-              "value": "36 transaksi",
-              "detail": "Rp3.460.000"
+              "value": "44 transaksi",
+              "detail": "Rp3.895.000"
             },
             {
               "name": "COUPLE",
-              "value": "6 transaksi",
-              "detail": "Rp255.000"
+              "value": "14 transaksi",
+              "detail": "Rp375.000"
             }
           ]
         }
@@ -591,24 +591,24 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp170.951.756",
-          "note": "TOTAL DAILY REVENUE 1 Juli 2026 - 7 Juli 2026",
-          "changePct": -69.48677485980535
+          "value": "Rp323.244.468",
+          "note": "TOTAL DAILY REVENUE 1 Juli 2026 - 8 Juli 2026",
+          "changePct": -46.88763597831759
         },
         {
           "label": "Omset Harian",
-          "value": "Rp0",
-          "note": "7 Juli 2026 vs 6 Juli 2026",
-          "changePct": -100
+          "value": "Rp244.436",
+          "note": "8 Juli 2026 vs 7 Juli 2026",
+          "changePct": -99.6047655537745
         },
         {
           "label": "Hari Terkuat MTD",
-          "value": "Rp50.459.288",
-          "note": "1 Juli 2026"
+          "value": "Rp61.845.824",
+          "note": "7 Juli 2026"
         },
         {
           "label": "Last Input",
-          "value": "6 Juli 2026",
+          "value": "8 Juli 2026",
           "note": "Baris terakhir dengan revenue lebih dari Rp0 di sheet"
         }
       ],
@@ -633,39 +633,39 @@
         ],
         "rows": [
           {
-            "date": "7 Juli 2026",
-            "revenue": "Rp0",
-            "change": "-100,0%"
-          },
-          {
-            "date": "6 Juli 2026",
-            "revenue": "Rp46.440",
+            "date": "8 Juli 2026",
+            "revenue": "Rp244.436",
             "change": "-99,6%"
           },
           {
+            "date": "7 Juli 2026",
+            "revenue": "Rp61.845.824",
+            "change": "+45,2%"
+          },
+          {
+            "date": "6 Juli 2026",
+            "revenue": "Rp42.580.827",
+            "change": "+35,0%"
+          },
+          {
             "date": "5 Juli 2026",
-            "revenue": "Rp11.819.756",
-            "change": "-72,0%"
+            "revenue": "Rp31.542.327",
+            "change": "-25,9%"
           },
           {
             "date": "4 Juli 2026",
-            "revenue": "Rp42.225.591",
-            "change": "+12,8%"
+            "revenue": "Rp42.566.472",
+            "change": "-3,5%"
           },
           {
             "date": "3 Juli 2026",
-            "revenue": "Rp37.424.744",
-            "change": "+29,2%"
+            "revenue": "Rp44.107.923",
+            "change": "-11,6%"
           },
           {
             "date": "2 Juli 2026",
-            "revenue": "Rp28.975.937",
-            "change": "-42,6%"
-          },
-          {
-            "date": "1 Juli 2026",
-            "revenue": "Rp50.459.288",
-            "change": "+37,9%"
+            "revenue": "Rp49.897.371",
+            "change": "-1,1%"
           }
         ]
       },
