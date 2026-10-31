@@ -1,19 +1,19 @@
 {
   "reportBasis": {
     "label": "Basis report yang dipakai sekarang",
-    "monthlyCurrent": "1 Oktober 2026 - 30 Oktober 2026",
+    "monthlyCurrent": "1 Oktober 2026 - 31 Oktober 2026",
     "monthlyPrevious": "1 September 2026 - 30 September 2026",
-    "dailyCurrent": "30 Oktober 2026",
-    "dailyPrevious": "29 Oktober 2026",
-    "updatedAt": "31 Oktober 2026, 06.43 WIB"
+    "dailyCurrent": "31 Oktober 2026",
+    "dailyPrevious": "30 Oktober 2026",
+    "updatedAt": "1 November 2026, 06.21 WIB"
   },
   "portfolioSummary": {
     "activeBrands": 3,
     "trackedBrands": 6,
-    "monthlyRevenue": 2802107352,
-    "monthlyChangePct": -11.896271214859087,
-    "dailyRevenue": 80034900,
-    "dailyChangePct": 7.2011797703144715
+    "monthlyRevenue": 2842277352,
+    "monthlyChangePct": -10.727279388922788,
+    "dailyRevenue": 94532400,
+    "dailyChangePct": 18.326572046197885
   },
   "brandReports": [
     {
@@ -198,7 +198,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 10 Agustus 2026 vs 9 Agustus 2026.",
-        "Refresh otomatis gagal pada 31 Oktober 2026, 06.43 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
+        "Refresh otomatis gagal pada 1 November 2026, 06.21 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
         "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
         "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
         "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
@@ -213,20 +213,20 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp552.255.001",
+          "value": "Rp584.595.001",
           "note": "Semua kiosk Snapobox",
-          "changePct": -1.2984341935945096
+          "changePct": 4.4815200529024874
         },
         {
           "label": "Omset Harian",
-          "value": "Rp18.940.000",
-          "note": "30 Oktober 2026 vs 29 Oktober 2026",
-          "changePct": 25.930851063829785
+          "value": "Rp32.340.000",
+          "note": "31 Oktober 2026 vs 30 Oktober 2026",
+          "changePct": 70.74973600844773
         },
         {
           "label": "Top Kiosk",
           "value": "SOB SALATIGA - ANAK PANAH",
-          "note": "MTD Rp37.380.000"
+          "note": "MTD Rp39.960.000"
         },
         {
           "label": "Kiosk Live",
@@ -254,57 +254,57 @@
           },
           {
             "key": "daily",
-            "label": "30 Okt",
+            "label": "31 Okt",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 29 Okt",
+            "label": "Vs 30 Okt",
             "align": "right"
           }
         ],
         "rows": [
           {
             "kiosk": "SOB SALATIGA - ANAK PANAH",
-            "mtd": "Rp37.380.000",
-            "mtdChange": "+6,0%",
-            "daily": "Rp1.380.000",
-            "dailyChange": "+9,5%"
+            "mtd": "Rp39.960.000",
+            "mtdChange": "+13,4%",
+            "daily": "Rp2.580.000",
+            "dailyChange": "+87,0%"
           },
           {
             "kiosk": "SOB MEDAN - CNB MANSYUR",
-            "mtd": "Rp35.820.000",
-            "mtdChange": "+1,5%",
-            "daily": "Rp1.470.000",
-            "dailyChange": "+172,2%"
+            "mtd": "Rp37.860.000",
+            "mtdChange": "+7,3%",
+            "daily": "Rp2.040.000",
+            "dailyChange": "+38,8%"
           },
           {
             "kiosk": "SOB PEKANBARU - TETRA",
-            "mtd": "Rp34.020.000",
-            "mtdChange": "-2,8%",
-            "daily": "Rp1.200.000",
-            "dailyChange": "+17,6%"
+            "mtd": "Rp36.000.000",
+            "mtdChange": "+2,8%",
+            "daily": "Rp1.980.000",
+            "dailyChange": "+65,0%"
           },
           {
             "kiosk": "SOB MALANG - JOKOPI",
-            "mtd": "Rp32.370.000",
-            "mtdChange": "-24,5%",
-            "daily": "Rp750.000",
-            "dailyChange": "-3,8%"
+            "mtd": "Rp33.810.000",
+            "mtdChange": "-21,1%",
+            "daily": "Rp1.440.000",
+            "dailyChange": "+92,0%"
           },
           {
             "kiosk": "⁠SOB MEDAN - CNB SPARMAN",
-            "mtd": "Rp29.640.000",
-            "mtdChange": "+2,9%",
-            "daily": "Rp930.000",
-            "dailyChange": "+47,6%"
+            "mtd": "Rp30.930.000",
+            "mtdChange": "+7,4%",
+            "daily": "Rp1.290.000",
+            "dailyChange": "+38,7%"
           },
           {
             "kiosk": "SOB SEMARANG - ANAK PANAH UNIKA",
-            "mtd": "Rp26.460.000",
-            "mtdChange": "-13,6%",
-            "daily": "Rp750.000",
-            "dailyChange": "+13,6%"
+            "mtd": "Rp27.480.000",
+            "mtdChange": "-10,3%",
+            "daily": "Rp1.020.000",
+            "dailyChange": "+36,0%"
           }
         ]
       },
@@ -314,19 +314,19 @@
           "description": "Kiosk yang melonjak paling besar pada hari tertutup terakhir.",
           "items": [
             {
-              "name": "SOB JOGJA - GACA 60",
-              "value": "+275,0%",
-              "detail": "Rp450.000 vs Rp120.000"
+              "name": "SOB PEKANBARU - PATY & PRESSO",
+              "value": "+362,5%",
+              "detail": "Rp1.110.000 vs Rp240.000"
             },
             {
-              "name": "SOB PALEMBANG - TETRA",
-              "value": "+233,3%",
-              "detail": "Rp300.000 vs Rp90.000"
+              "name": "SOB MAGELANG - CNB",
+              "value": "+350,0%",
+              "detail": "Rp270.000 vs Rp60.000"
             },
             {
-              "name": "SOB BATAM - KESIANGAN",
-              "value": "+180,0%",
-              "detail": "Rp420.000 vs Rp150.000"
+              "name": "SOB MEDAN - CNB MEDAN PANCING",
+              "value": "+290,0%",
+              "detail": "Rp1.170.000 vs Rp300.000"
             }
           ]
         }
@@ -346,27 +346,27 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp166.560.000",
+          "value": "Rp174.390.000",
           "note": "Balcos Compound + Plemburan",
-          "changePct": 11.943006922508232
+          "changePct": 14.624687787564087
         },
         {
           "label": "Appointment MTD",
-          "value": "1.130",
+          "value": "1.181",
           "note": "Total booking bulan berjalan",
-          "changePct": 11.330049261083744
+          "changePct": 13.339731285988485
         },
         {
           "label": "Omset Harian",
-          "value": "Rp6.530.000",
-          "note": "30 Oktober 2026 vs 29 Oktober 2026",
-          "changePct": 20.925925925925924
+          "value": "Rp7.830.000",
+          "note": "31 Oktober 2026 vs 30 Oktober 2026",
+          "changePct": 19.90811638591118
         },
         {
           "label": "Appointment Harian",
-          "value": "43",
-          "note": "30 Oktober 2026 vs 29 Oktober 2026",
-          "changePct": 26.47058823529412
+          "value": "51",
+          "note": "31 Oktober 2026 vs 30 Oktober 2026",
+          "changePct": 18.6046511627907
         }
       ],
       "table": {
@@ -394,31 +394,31 @@
           },
           {
             "key": "daily",
-            "label": "30 Okt",
+            "label": "31 Okt",
             "align": "right"
           },
           {
             "key": "dailyChange",
-            "label": "Vs 29 Okt",
+            "label": "Vs 30 Okt",
             "align": "right"
           }
         ],
         "rows": [
           {
             "outlet": "Balcos Compound",
-            "mtd": "Rp88.070.000",
-            "mtdChange": "-3%",
-            "appointments": "565",
-            "daily": "Rp4.100.000",
-            "dailyChange": "+36,4%"
+            "mtd": "Rp92.510.000",
+            "mtdChange": "-0%",
+            "appointments": "593",
+            "daily": "Rp4.440.000",
+            "dailyChange": "+8,3%"
           },
           {
             "outlet": "Plemburan",
-            "mtd": "Rp78.490.000",
-            "mtdChange": "+35%",
-            "appointments": "565",
-            "daily": "Rp2.430.000",
-            "dailyChange": "+1,5%"
+            "mtd": "Rp81.880.000",
+            "mtdChange": "+38%",
+            "appointments": "588",
+            "daily": "Rp3.390.000",
+            "dailyChange": "+39,5%"
           }
         ]
       },
@@ -581,7 +581,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 22 Oktober 2026 vs 21 Oktober 2026.",
-        "Refresh otomatis gagal pada 31 Oktober 2026, 06.43 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
+        "Refresh otomatis gagal pada 1 November 2026, 06.21 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
         "Spreadsheet dibaca read-only, tidak ada perubahan ke file sumber.",
         "Header dan sheet name dibaca langsung dari tab overview masing-masing cabang agar automation tidak bergantung pada klik browser."
       ]
@@ -596,14 +596,14 @@
         {
           "label": "Omset MTD",
           "value": "Rp1.434.358.551",
-          "note": "TOTAL DAILY REVENUE 1 Oktober 2026 - 30 Oktober 2026",
+          "note": "TOTAL DAILY REVENUE 1 Oktober 2026 - 31 Oktober 2026",
           "changePct": -19.500289477332288
         },
         {
           "label": "Omset Harian",
-          "value": "Rp202.500",
-          "note": "30 Oktober 2026 vs 29 Oktober 2026",
-          "changePct": null
+          "value": "Rp0",
+          "note": "31 Oktober 2026 vs 30 Oktober 2026",
+          "changePct": -100
         },
         {
           "label": "Hari Terkuat MTD",
@@ -637,6 +637,11 @@
         ],
         "rows": [
           {
+            "date": "31 Oktober 2026",
+            "revenue": "Rp0",
+            "change": "-100,0%"
+          },
+          {
             "date": "30 Oktober 2026",
             "revenue": "Rp202.500",
             "change": "-"
@@ -665,11 +670,6 @@
             "date": "25 Oktober 2026",
             "revenue": "Rp638.968",
             "change": "-98,3%"
-          },
-          {
-            "date": "24 Oktober 2026",
-            "revenue": "Rp36.754.626",
-            "change": "+73,2%"
           }
         ]
       },
