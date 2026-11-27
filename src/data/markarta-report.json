@@ -1,19 +1,19 @@
 {
   "reportBasis": {
     "label": "Basis report yang dipakai sekarang",
-    "monthlyCurrent": "1 November 2026 - 25 November 2026",
-    "monthlyPrevious": "1 Oktober 2026 - 25 Oktober 2026",
-    "dailyCurrent": "25 November 2026",
-    "dailyPrevious": "24 November 2026",
-    "updatedAt": "26 November 2026, 09.48 WIB"
+    "monthlyCurrent": "1 November 2026 - 26 November 2026",
+    "monthlyPrevious": "1 Oktober 2026 - 26 Oktober 2026",
+    "dailyCurrent": "26 November 2026",
+    "dailyPrevious": "25 November 2026",
+    "updatedAt": "27 November 2026, 09.50 WIB"
   },
   "portfolioSummary": {
     "activeBrands": 1,
     "trackedBrands": 6,
-    "monthlyRevenue": 2795561769,
-    "monthlyChangePct": -8.661796723214266,
-    "dailyRevenue": 73157725,
-    "dailyChangePct": 3.5596172370745727
+    "monthlyRevenue": 2863296867,
+    "monthlyChangePct": -8.610485120779977,
+    "dailyRevenue": 72732400,
+    "dailyChangePct": 3.00737331707892
   },
   "brandReports": [
     {
@@ -198,7 +198,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 10 Agustus 2026 vs 9 Agustus 2026.",
-        "Refresh otomatis gagal pada 26 November 2026, 09.48 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
+        "Refresh otomatis gagal pada 27 November 2026, 09.50 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Sebelas Coffee.",
         "Omset memakai endpoint multi-outlet summary sebagai source of truth.",
         "Ranking produk masih memakai snapshot SKU terakhir yang terverifikasi karena endpoint SKU lintas outlet belum konsisten untuk automation headless.",
         "Jika token Olsera kedaluwarsa, refresh berikutnya akan mempertahankan snapshot terakhir sampai sesi diperbarui."
@@ -333,7 +333,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 24 November 2026 vs 23 November 2026.",
-        "Refresh otomatis gagal pada 26 November 2026, 09.48 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
+        "Refresh otomatis gagal pada 27 November 2026, 09.50 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snapobox.",
         "Snapobox belum punya dimensi produk yang stabil di dashboard saat ini, jadi fokus utama dashboard adalah performa kiosk.",
         "Masalah frame popularity bulanan tetap perlu dibereskan oleh developer Snapobox karena API publik masih memakai lifetime count.",
         "Semua angka gross income dihitung dari transaksi sukses pada export range yang sama."
@@ -444,7 +444,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 24 November 2026 vs 23 November 2026.",
-        "Refresh otomatis gagal pada 26 November 2026, 09.48 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
+        "Refresh otomatis gagal pada 27 November 2026, 09.50 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Zona Massage.",
         "Omset dan appointment sudah direfresh ke basis tertutup lewat widget performance LatePoint.",
         "Top service masih memakai snapshot Appointments terakhir yang terverifikasi sampai ranking service ikut diotomatisasi penuh."
       ]
@@ -585,7 +585,7 @@
       ],
       "notes": [
         "Basis data fallback yang masih ditampilkan: 22 Oktober 2026 vs 21 Oktober 2026.",
-        "Refresh otomatis gagal pada 26 November 2026, 09.48 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
+        "Refresh otomatis gagal pada 27 November 2026, 09.50 WIB; dashboard mempertahankan snapshot terakhir yang valid untuk Snap O' Snap.",
         "Spreadsheet dibaca read-only, tidak ada perubahan ke file sumber.",
         "Header dan sheet name dibaca langsung dari tab overview masing-masing cabang agar automation tidak bergantung pada klik browser."
       ]
@@ -599,19 +599,19 @@
       "summaryCards": [
         {
           "label": "Omset MTD",
-          "value": "Rp1.527.365.945",
-          "note": "TOTAL DAILY REVENUE 1 November 2026 - 25 November 2026",
-          "changePct": -14.15000696561703
+          "value": "Rp1.595.101.043",
+          "note": "TOTAL DAILY REVENUE 1 November 2026 - 26 November 2026",
+          "changePct": -13.84857662303044
         },
         {
           "label": "Omset Harian",
-          "value": "Rp425.325",
-          "note": "25 November 2026 vs 24 November 2026",
-          "changePct": -7.437431991294886
+          "value": "Rp0",
+          "note": "26 November 2026 vs 25 November 2026",
+          "changePct": -100
         },
         {
           "label": "Hari Terkuat MTD",
-          "value": "Rp198.864.488",
+          "value": "Rp201.919.229",
           "note": "11 November 2026"
         },
         {
@@ -641,6 +641,11 @@
         ],
         "rows": [
           {
+            "date": "26 November 2026",
+            "revenue": "Rp0",
+            "change": "-100,0%"
+          },
+          {
             "date": "25 November 2026",
             "revenue": "Rp425.325",
             "change": "-7,4%"
@@ -648,32 +653,27 @@
           {
             "date": "24 November 2026",
             "revenue": "Rp459.500",
-            "change": "-74,3%"
+            "change": "-83,3%"
           },
           {
             "date": "23 November 2026",
-            "revenue": "Rp1.789.770",
-            "change": "-46,3%"
+            "revenue": "Rp2.750.930",
+            "change": "-28,6%"
           },
           {
             "date": "22 November 2026",
-            "revenue": "Rp3.335.382",
-            "change": "-84,4%"
+            "revenue": "Rp3.850.192",
+            "change": "-83,3%"
           },
           {
             "date": "21 November 2026",
-            "revenue": "Rp21.421.463",
-            "change": "+2,2%"
+            "revenue": "Rp23.078.550",
+            "change": "-16,6%"
           },
           {
             "date": "20 November 2026",
-            "revenue": "Rp20.959.313",
-            "change": "-13,7%"
-          },
-          {
-            "date": "19 November 2026",
-            "revenue": "Rp24.288.919",
-            "change": "-59,1%"
+            "revenue": "Rp27.678.200",
+            "change": "-6,9%"
           }
         ]
       },
